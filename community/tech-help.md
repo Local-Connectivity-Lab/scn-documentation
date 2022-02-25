@@ -41,6 +41,12 @@ However, you may also drop in during our scheduled calendar hours without an app
 * Email address for general Community Tech Support: [techsupport@seattlecommunitynetwork.org](mailto:techsupport@seattlecommunitynetwork.org)
 * Email address for SCN Internet service-related support: [help@seattlecommunitynetwork.org](mailto:help@seattlecommunitynetwork.org)
 
+### Help Desk Volunteers
+
+We are actively recruiting more volunteers to help us run the help desk virtually, whenever and wherever that you are available. 
+Join our team by simply signup in this [interest form](https://forms.gle/iqBYKmjkTYa4gFK98), we need you! 
+
+Please let us know if you have additional questions or concerns in the `#support` channel on our [Slack](https://seattlecommunitynet.slack.com). 
 
 ## Submit a Support Ticket
 
