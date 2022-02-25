@@ -22,6 +22,9 @@ We have a partnership with [Google SAS](https://www.google.com/get/spectrumdatab
 
 Learn more about our SAS setup [here]({{ "infrastructure/sas-setup.html" | absolute_url }}).
 
+### Network Monitoring and Alerting
+We use [LibreNMS](https://www.librenms.org) and SNMPd to monitor our nodes and provide alerting. Our Baicells-specific Network Manager setup is documented [here]({{ "infrastructure/librenms-manager-setup.html" | absolute_url }}), and our instructions for configuring a new node can be found [here]({{"infrastructure/librenms-setup.html" | absolute_url }}).
+
 ## Field Measurement
 
 ### Network Performance Measurement Tool
