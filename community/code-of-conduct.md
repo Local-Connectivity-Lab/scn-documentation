@@ -53,7 +53,7 @@ The following types of behavior are unacceptable at SCN, both online and in-pers
 
 ## Reporting
 
-Please report code of conduct violations either to the event organizer, by emailing lcl@eattlecommunitynetwork.org or by alerting moderators on Discord with the @moderators group tag.
+Please report code of conduct violations either to the event organizer, by emailing lcl@seattlecommunitynetwork.org or by alerting moderators on Discord with the @moderators group tag.
 
 All of our moderators are volunteers, and will response with their best effort. However, if you provide your name, or contact info we promise to respond within two business days.
 
