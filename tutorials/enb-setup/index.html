@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Step 2. eNodeB and SAS Setup - Seattle Community Network Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Step 2. eNodeB and SAS Setup";
+        var mkdocs_page_input_path = "tutorials/enb-setup.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Seattle Community Network Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Faq</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/connection/">How do I get Internet?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/what/">What is a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/why/">Why have a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/about/">What is the Seattle Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/how/">How does SCN Work?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/site/">What is this site?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/help/">How can I Help?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Community</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/join/">Join Us</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/mission-vision-values/">Mission, Vision, Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/code-of-conduct/">Code of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/space/">SCN Community Lab Space</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/partners/">Our Partners</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/tech-help/">Community Tech Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/community-networking-toolkit/">Community Networking Toolkit</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Learn</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/wireless-communication/">Wireless Communication</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/cable-crimping/">Crimping Ethernet Cables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/lte-networks/">LTE Networks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/networking/">Networking</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Infrastructure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/hardware/">Hardware Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/software/">Software Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/peering/">Public ASN Peering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/librenms-manager-setup/">Network Monitoring 1. LibreNMS Network Manager Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/epc-setup/">Step 1. LTE Core Network Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/sas-setup/">Step 2. eNodeB and SAS Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/proxmox-vaultwarden-deployment/">Proxmox Deployment Guide - Vaultwarden</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Librenms</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/deploy/">Deploying</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/upgrade/">Upgrading</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/backup/">Backing Up</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Contribute</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../contribute/contribute/">Contribute to SCN Docs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Seattle Community Network Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">Step 2. eNodeB and SAS Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="step-2-enodeb-and-sas-setup">Step 2: eNodeB and SAS Setup</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Despite CBRS being a relatively open frequency band, the processes for spectrum access are still somewhat opaque and require significant capital investment and/or ISP-level resources to set up. To clarify this process, here’s a step by step walkthrough tutorial of the setup of a Baicells eNodeB (eNB) base station running in the Citizen’s Broadband Radio Service (CBRS) spectrum band (or band 48).</p>
+<p>Before following this tutorial, you should have completed the setup of a LTE Evolved Packet Core (EPC) to control your eNB, for which the setup of an open source version based on open5gs is outlined in this <a href="https://hackmd.io/brHS3l1-T_uTUaDEAHMOxw?view">tutorial</a>. </p>
+<h2 id="i-get-set-up-with-a-spectrum-access-system-sas">I. Get set up with a Spectrum Access System (SAS)</h2>
+<h3 id="a-why-get-set-up-with-a-sas">A. Why get set up with a SAS?</h3>
+<p>Current FCC regulations require all CBRS equipment (called a CBSD) to be registered on a Spectrum Access System (SAS) that coordinates all spectrum assignments and ensures that no transmissions interfere with each other. This will likely require a commercial agreement with a SAS provider such as Google, Federated Wireless, etc. <strong>This tutorial uses the Google SAS.</strong></p>
+<h3 id="b-cpi-license">B. CPI License</h3>
+<p>At least one member of your team will require “Certified Professional Installer” (CPI) training and license in order to hold legal responsibility for and sign off on device installations. Most SAS providers will offer training at about $500 for both an online training course and the certification exam. If you aren’t able to get someone on your team certified, be sure to collaborate with a CPI! Feel free to contact us at the Local Connectivity Lab if you need support for your community project in this regard, and we can figure out what is feasible.</p>
+<p>The following are some links and helpful notes about this process:
+* https://wifidevan.wordpress.com/cbrs-certified-professional-installer-cpi-study-notes/
+* https://alliancecorporation.ca/webinars/webinars-webinars/cbrs-for-beginners-part-2-by-commscope/
+* https://cbrs.wirelessinnovation.org/acronyms</p>
+<h3 id="c-sas-pricing-agreements">C. SAS Pricing Agreements</h3>
+<p>For Google, the price options provided us in summer 2020 were:</p>
+<ul>
+<li>Fixed Wireless<ul>
+<li>SAS services are billed per link/household so you pay for each CPE (Customer Premises Equipment) CBSD registered with SAS. </li>
+<li>CBSDs that operate as base stations are free of charge. Price Per Customer Link $2.25/month.</li>
+</ul>
+</li>
+<li>Mobility/Private LTE (price is based on CBSD categoris)<ul>
+<li>Category A CBSD <ul>
+<li>max transmit capability: 30 dBm/10 MHz = 20 dBm/MHz or “1 Watt”</li>
+<li>mounted under 6m Height Above Average Terrain measured 3-16 km away from site</li>
+<li>$2.67/month</li>
+</ul>
+</li>
+<li>Category B CBSD <ul>
+<li>max transmit capability: Maximum EIRP of 47 dBm/10 MHz = 37 dBm/MHz or “50 Watt"</li>
+<li>$13.33/month.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="d-sas-registration">D. SAS Registration</h3>
+<p>CBSDs must register their transmit capabilities with the SAS using either the “one-step” or “multi-step” process. </p>
+<p>The one-step process requires you to input all installation parameters and sign them with the CPI certificate all on the base station itself, or via a cloud domain proxy such as used by Baicells. <strong>Not all base stations support this and the interfaces for doing so might vary widely, so “multi-step” is typically recommended.</strong></p>
+<h2 id="ii-register-device-in-sas-portal">II. Register device in SAS portal</h2>
+<p>This tutorial will be walking through steps following the specifics of the Google SAS portal interface, but the steps should be generalizable to other SAS portals.</p>
+<h3 id="a-once-you-have-an-account-on-an-sas-service-register-your-devices-on-their-portal-or-dashboard">A. Once you have an account on an SAS service, register your devices on their portal or dashboard.</h3>
+<p>The Google SAS portal can be found at: https://wirelessconnectivity.google.com/sas/</p>
+<h3 id="b-our-setup">B. Our Setup</h3>
+<p>Our test setup in the lab includes: </p>
+<ul>
+<li>1W Baicells Nova 233 base station in the CBRS band mounted on the 6th floor balcony of our UW computer science building.</li>
+<li>Alpha Wireless 18 dBi-gain panel antenna with a beamwidth of 65 degrees (model AW3014-T4), mounted straight ahead and not tilted down. </li>
+</ul>
+<h3 id="c-example-configuration">C. Example Configuration</h3>
+<p>An example configuration for this setup is shown below.</p>
+<p><img alt="Google SAS Configuration Screen" src="https://i.imgur.com/9G0bymT.png" /></p>
+<p><em>The configuration screen is a right-hand sidebar next to the map view, hence the unwieldy aspect ratio.</em></p>
+<p>Explanation of parameters:</p>
+<ol>
+<li>CBSD Category (A or B):<ul>
+<li>Defined by rules in Section I.C above</li>
+</ul>
+</li>
+<li>User ID<ul>
+<li>Specified by the SAS provider when you register</li>
+</ul>
+</li>
+<li>
+<p>FCC ID and Serial Number:</p>
+<ul>
+<li>Both the radio and antenna model must be pre-authorized for use with CBRS by the FCC.</li>
+<li>The FCC ID is used to identify this approved device type.</li>
+<li>The serial number specifies the exact device identity.</li>
+<li>Both can usually be found on the outside of the device (circled in image below).
+<img alt="" src="https://i.imgur.com/YDAABLk.jpg" /></li>
+</ul>
+</li>
+<li>
+<p>Beamforming Gain, Beamwidth</p>
+<ul>
+<li>Based on antenna specs in II.B</li>
+</ul>
+</li>
+<li>EIRP<ul>
+<li><a href="https://www.everythingrf.com/rf-calculators/eirp-effective-isotropic-radiated-power">Effective Isotropic Radiated Power</a> of your system including both the base station radio and antenna. </li>
+<li>For a Cat B CBSD, this must be 46 dBm/10 MHz=36 dBm/MHz or lower. </li>
+<li>Calculate this value by adding the max transmit power (actually power density per MHz) of the base station, in our case 28 dBm, to the antenna beamforming gain, in our case 18 dBi; 28+18=36 dBm/MHz. </li>
+<li>For the units requested by the Google interface, add 10 to this value to specify power per 10 MHz instead of per MHz. </li>
+</ul>
+</li>
+<li>Height<ul>
+<li>Specified in terms of height Above Ground Level (AGL) which you can measure using a rangefinder/ measuring tape/ building plan, or in height Above Mean Sea Level (AMSL). </li>
+<li><strong>Not</strong> in terms of HAAT as in the Cat A/B definition.</li>
+<li>Must be accurate to within 3 m.</li>
+</ul>
+</li>
+<li>
+<p>Azimuth</p>
+<ul>
+<li>Refers to the compass heading/ direction that the antenna is pointing (set this to 0 for an omnidirectional antenna). </li>
+<li>This <a href="https://www.fcc.gov/media/radio/distance-and-azimuths">FCC tool</a> is extremely helpful for calculating the azimuth based on the antenna’s gps location and that of a structure you are pointing it at.</li>
+<li>You can get these GPS coordinates via Google Maps or Google Earth.
+<img alt="" src="https://i.imgur.com/SgxORTx.png" /></li>
+</ul>
+</li>
+<li>
+<p>Air Interface</p>
+<ul>
+<li>E_UTRA is the LTE radio standard used by our Baicells box.</li>
+<li>The only “supported spec” currently available for Baicells is FFS (according to a forum post, linked here).</li>
+</ul>
+</li>
+<li>Location: <ul>
+<li>In the Google interface, set the site location in GPS coordinates under the tab labeled with the map pin icon. <em>(not shown)</em></li>
+</ul>
+</li>
+<li>Parameters under "CBSD Info"<ul>
+<li>Call Sign<ul>
+<li>As far as I can tell, this can be any reasonable alphanumeric string as long as it is unique and matches the value of the “call sign” parameter as sent over by the eNB or domain proxy.</li>
+<li>You will set this in the SAS interface as well as either the eNB or Baicells Cloud Core (they all need to match).</li>
+</ul>
+</li>
+<li>Others<ul>
+<li>These should match the settings with the same name on the eNB’s local management portal, shown on the “Basic Info” page in section IV.A below.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="d-cpi-signature">D. CPI Signature</h3>
+<p>When the parameters are all filled out, click the big red “Ready for CPI” button at the bottom of the panel (not shown here). On the CPI’s version of the interface, it will provide a place to “sign” the configuration with their CPI certificate, which they will upload to the interface. <strong>This must happen before the device can get a spectrum grant.</strong> </p>
+<h3 id="e-status-tab">E. Status Tab</h3>
+<p>After the CPI signs the eNB configuration, under the “Status” tab (visible in the config panel), you should see “Not yet Registered” (or a similar message) because the eNB has not checked in to the Google SAS yet with its matching parameters to complete the multi-step process. If something has otherwise gone wrong, you’ll see an error message here.</p>
+<h3 id="f-other-helpful-links">F. Other helpful links</h3>
+<ul>
+<li><a href="https://support.google.com/sas/answer/9539493?hl=en&amp;ref_topic=9455755">Google CBSD registration and deregistration</a></li>
+<li><a href="https://www.freemaptools.com/elevation-finder.htm">Elevation finder tool with map</a></li>
+</ul>
+<h2 id="iii-steps-in-baicells-cloud-interface">III. Steps in Baicells Cloud interface</h2>
+<h3 id="a-make-a-baicells-omc-account">A. Make a Baicells OMC account.</h3>
+<p>Due to Baicells’ use of a “domain proxy” for their SAS requests, you will need to make a new user account in the Baicells Operators Management Console (OMC): https://cloudcore.baicells.com:4443/ </p>
+<p>This is distinct from their paid “Cloud Core” service which we will not be using in this tutorial, although the management portal is the same.</p>
+<h3 id="b-take-note-of-the-cloudkey">B. Take note of the CloudKey</h3>
+<p>Once you have made an account, note the 6-letter “CloudKey” in the upper right corner of the screen (circled in red). </p>
+<p><img alt="" src="https://i.imgur.com/thYx40F.png" /></p>
+<p>This will need to be inputted into the local eNB management portal for the eNB to check into the Cloud OMC. </p>
+<p><em>On your version of this portal, if you’re doing this for the first time, you shouldn’t see any eNBs already present.</em></p>
+<h3 id="c-set-your-sas-service-provider">C. Set your SAS service provider.</h3>
+<p>Navigate to Advance→SAS in the left hand menu, and then click the gear icon on the upper right corner, which has the hover text “Settings.” </p>
+<h2 id="iv-steps-in-baicells-management-interface">IV. Steps in Baicells management interface</h2>
+<h3 id="a-local-management-portal">A. Local Management Portal</h3>
+<p>The Baicells eNodeB (eNB) is best managed through the browser-based management portal; the current command line interface is accessible but extremely limited. </p>
+<p>The default IP address of the management portal (and that of most Baicells equipment I’ve seen) is 192.168.150.1, and the default login credentials are admin/admin. <em>I would recommend changing the admin login credentials to be more secure.</em></p>
+<p>Connect your computer to the eNB via Ethernet, and navigate to this IP address in your browser (using http://192.168.150.1, not https).</p>
+<p>Baicells Initial Login Screen:</p>
+<p><img alt="" src="https://i.imgur.com/4RlDG7R.png" /></p>
+<p>BTS Info→“Basic Info” Page visible upon login:</p>
+<p><img alt="" src="https://i.imgur.com/AdSEjMC.png" /></p>
+<h3 id="b-upgrade-firmware">B. Upgrade firmware</h3>
+<p>Upgrade the firmware to the latest firmware version that supports SAS functionality, or verify that it is already up to date. </p>
+<p>You can check the official <a href="https://na.baicells.com/Service/Firmware">firmware page</a> under the correct eNB model. The Nova 233 CBRS small cell we’re using is model mBS1105. The latest firmware version after which SAS is officially supported is BaiBS_RTS_3.6.6.IMG (as of Feb 2021), for which the direct download is available <a href="https://img.baicells.com//Upload/20200912/FILE/6aaf03fa-7768-40eb-8e1b-ee79f5cb443a.IMG">here</a>. </p>
+<p><img alt="" src="https://i.imgur.com/OPL0HYs.png" /></p>
+<p><strong><em>Do not skip this step, otherwise none of the following steps will work right.</em></strong></p>
+<h3 id="c-get-everything-connected">C. Get everything connected</h3>
+<p>Once the firmware is upgraded, you will want to get the eNB connected to your local <a href="https://hackmd.io/brHS3l1-T_uTUaDEAHMOxw?view">LTE core network (EPC)</a> as well as to the Internet so it can contact the necessary SAS infrastructure.</p>
+<h4 id="1-configure-internet-access-wan">1. Configure Internet Access (WAN)</h4>
+<p>Navigate to the Network→WAN/LAN/VLAN tab on the left hand menu. </p>
+<p>We will set the WAN interface IP address to 192.168.151.1, since the Baicells console requires (for whatever reason) a different subnet for the WAN as opposed to the LAN. </p>
+<p>Then we will connect the eNB to an Ethernet port on the EPC that has the IP address 192.168.151.2 (as set up in our previous tutorial), which will act as the eNB’s Internet gateway.</p>
+<p><strong>Don’t forget to hit “Save” after each change you make in this interface.</strong>
+<img alt="" src="https://i.imgur.com/knqF26j.png" /></p>
+<h4 id="2-check-internet-access">2. Check Internet access</h4>
+<p>At this point, if the EPC is configured correctly to pass eNB traffic to the Internet, the eNB should be able to ping an arbitrary IP address. </p>
+<p>To test this, navigate to the Network→Diagnostics tab on the left hand menu and select “Ping” under the “Method of Diagnostics” dropdown menu. Set the “Target IP Domain” to be a highly reachable IP address on the Internet such as 1.1.1.1, which is the CloudFlare DNS server. Press “Implement.” </p>
+<p>If the result is “Fail!” as in the screenshot, there is likely something wrong with your eNB’s Internet connection through the EPC; you should fix this issue before continuing. 
+<img alt="" src="https://i.imgur.com/tOgPFxa.png" /></p>
+<h4 id="3-reboot-as-needed">3. Reboot as needed</h4>
+<p>If a message appears that the eNB needs a reboot after the new settings are saved, navigate to the Reboot tab in the left hand menu and perform the reboot (Warm Reset is fine).</p>
+<h4 id="4-attach-to-baicells-omc">4. Attach to Baicells OMC</h4>
+<p>To configure the eNB to talk to the OMC as discussed in the prior section, navigate to the BTS Setting→Management Server tab in the management console and enter the CloudKey. </p>
+<p>Within a few minutes, the eNB should appear in your Baicells Cloud OMC console, and the “Basic Info” page should show that the OMC is “Connected.”
+<img alt="" src="https://i.imgur.com/we7ySwo.png" />
+<img alt="" src="https://i.imgur.com/Ic7u0II.png" /></p>
+<h4 id="5-disable-ipsec">5. Disable IPsec</h4>
+<p>For our purposes we will not be using IPsec between our EPC and eNB; the default IPSec configured is used for the Baicells Cloud EPC which we are not using. </p>
+<p>Navigate to the Network→“MME&amp;IPSec Binding” menu tab and set “IPSec Status” to “Disable.” You may also delete the IPSec tunnels as shown below. 
+<img alt="" src="https://i.imgur.com/1XO8wj5.png" /></p>
+<h4 id="6-disable-gps-sync-when-testing-indoors">6. Disable GPS Sync when testing indoors.</h4>
+<p>Navigate to the “BTS Setting”→“Sync Setting” menu and disable both “Forced Sync” and “GPS Sync Switch,” in case you need to work with the base station in a location where you don’t have a strong GPS signal. </p>
+<p>Some base stations will not start up normally or attach to the EPC unless they get a GPS signal, and we should avoid this behavior.
+<img alt="" src="https://i.imgur.com/RPq0kzq.png" /></p>
+<h4 id="7-change-the-mme-settings">7. Change the MME settings</h4>
+<p>Change the MME settings. Since we are using our local EPC, we will need to change the MME settings to reflect our MME’s IP address, on which it is listening for eNBs to attach, as well as other configurations. Navigate to the BTS Info→Quick Setting tab on the left hand menu.</p>
+<p><img alt="" src="https://i.imgur.com/owYmUoJ.png" /></p>
+<ul>
+<li>Disable RF<ul>
+<li>You should set the “RF Status” setting to “Disable” before you change the MME IP, because attaching to the MME will normally cause the eNB’s radio to turn on.</li>
+<li>Since we have not enabled the eNB to ask for spectrum coordinated by the SAS yet, turning on the radio may cause unwanted interference on someone else’s network.</li>
+</ul>
+</li>
+<li>PLMN setting<ul>
+<li>Remove the existing “PLMN ID” (by clicking the trash can symbol) and set it to the value that you have configured in your EPC.</li>
+<li>In our networks, we use “91054” as our PLMN, so add this as a “Primary” and “NotReserved” PLMN by entering the number in the text box and clicking the “+” button.</li>
+</ul>
+</li>
+<li>MME IP address<ul>
+<li>Remove the existing MME IP associated with the old PLMN.</li>
+<li>Add the new MME IP address, in our case 192.168.150.2, by entering it in the text box and clicking “+”. This MME IP should be associated with the newly added PLMN by default.</li>
+<li>Save the changes and reboot the eNB (Warm Reset); after the reboot has finished (within a few minutes), the eNB should attach to the MME.</li>
+<li>If you navigate to BTS Info→Basic Info, you should see the MME Status change from “Not Connected” to “Connected.” If you are looking at the MME logs on the EPC, you will also see the record that an eNB has attached.</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-enable-sas">8. Enable SAS</h4>
+<p><strong>SAS should only be enabled after successfully attaching the eNB to the MME.</strong> Unfortunately, when SAS is enabled, the eNB will not attach to the MME unless it has a currently valid authorization to transmit on a certain frequency. However, until it is attached to an MME, the Baicells Cloud OMC will not provide it this authorization. </p>
+<p>So we need to have SAS disabled first with the RF also disabled, attach the eNB to the MME, and then enable SAS. </p>
+<p>Choose “Multi-step” under “SAS Registration Type,” as specified in Section I.E. Also choose “B” under “category,” and write in the other parameters to match the ones with the same name in the Google SAS configuration.</p>
+<p><img alt="" src="https://i.imgur.com/d5KzckP.png" /></p>
+<p>After you click “Save,” SAS should be enabled immediately. You should see the SAS enabled status change in the Baicells Cloud OMC. If all goes smoothly, your device should get an authorization to transmit within a few minutes and the radio should turn on!</p>
+<h4 id="9-check-baicells-cloud-omc-to-debug-issues">9. Check Baicells CLOUD OMC to debug issues</h4>
+<p>You can check the status of the SAS authorization process in the Cloud OMC. Here you can find logs (upper right corner of SAS screen, shown in the screenshot below) with any error messages that may have occurred in the process.
+<img alt="" src="https://i.imgur.com/rQntnQ9.png" /></p>
+<ul>
+<li>Errors can be caused by invalid or non-matching parameter values, lack of CPI signature, lack of spectrum availability, etc. </li>
+<li>In more difficult cases, after device registration the SAS may not respond to spectrum inquiries without sending any clear error messages. I have encountered this scenario when requesting spectrum around midnight, which may have been caused by brief database unavailability during the daily “SAS Sync” or IAP. My recommendation is to avoid requesting a new spectrum grant after 11 pm PST.</li>
+<li>If you change anything about the equipment used on site or the location/orientation of the equipment, you need to change the SAS registration, have it re-signed by the CPI, and use the Baicells OMC to re-request a new spectrum authorization- this process is described in the following section.</li>
+</ul>
+<h2 id="v-how-to-change-location-antenna-properties-etc-after-deployment">V. How to change location, antenna properties, etc. after deployment</h2>
+<p>As an example, this section will show how you would change the equipment’s location upon moving from test site to deployment site.</p>
+<ol>
+<li>Get the new GPS location either manually using Google Maps/Earth, or automatically using Baicells OMC’s GPS reading for the eNB if available.</li>
+<li>
+<p>Google SAS steps</p>
+<ul>
+<li>In the upper right hand corner of the Google SAS configuration for the deployed equipment (long narrow right side panel for a particular site), press the unlock button (shaped like a padlock) to make the configuration editable.
+<center></li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/B6DB1or.png" />
+</center></p>
+<ul>
+<li>To edit the site location, click on the map pin icon in the upper left corner of this same right hand configuration panel to enter the location panel. Enter the new GPS coordinates in the box. After your changes, lock the site configuration again. (If the red “Ready for CPI” button appears again at the bottom of the main configuration panel, go ahead and click it to prompt the CPI to sign.)</li>
+</ul>
+<p><center></p>
+<p><img alt="" src="https://i.imgur.com/mFD3cWc.png" />
+</center></p>
+<ul>
+<li>You may have to wait a few minutes or hours for the changes to sync to the CPI’s SAS database view. If after a while the CPI still cannot see the location change, ask them to enter the new GPS coordinates in their own interface and re-sign the configuration.</li>
+<li>Baicells Cloud OMC steps</li>
+<li>
+<p>On the Baicells OMC, navigate to the Advance→SAS screen where you can see the list of CBRS devices and their SAS status. Click on the 3 dots ( ⠇) symbol before the serial number for a particular device and click on “Procedure” to enter the SAS procedure screen.
+<img alt="" src="https://i.imgur.com/6zXTVah.png" /></p>
+</li>
+<li>
+<p>On the Procedure screen, you can see the most recent SAS logs, relinquish and re-request active spectrum authorizations, or de-register and re-register devices. First click on the “Authorized” icon and click on the “Relinquishment req” button to relinquish the current spectrum authorization. Then the latter two icons will become greyed out, but the device will remain registered. 
+<img alt="" src="https://i.imgur.com/bjbGzyY.png" /></p>
+</li>
+<li>
+<p>We will need to fully de-register and re-register the device with the new parameters. Click the “Registered” icon and then the “De-register” button when it appears to de-register the device. 
+<img alt="" src="https://i.imgur.com/aW9qDZF.png" /></p>
+</li>
+<li>
+<p>Once the device is in the “Unregistered” state, click the “Unregistered” icon and then click the “Register req” button when it appears. If all goes well, the device should re-register, and also request and receive a new grant (completing the full procedure) within a few moments.</p>
+</li>
+</ul>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../learn/wireless-communication/" class="btn btn-neutral float-left" title="Wireless Communication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../epc-setup/" class="btn btn-neutral float-right" title="Step 1. LTE Core Network Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../learn/wireless-communication/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../epc-setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

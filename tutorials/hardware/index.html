@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Hardware Overview - Seattle Community Network Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Hardware Overview";
+        var mkdocs_page_input_path = "tutorials/hardware.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Seattle Community Network Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Faq</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/connection/">How do I get Internet?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/what/">What is a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/why/">Why have a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/about/">What is the Seattle Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/how/">How does SCN Work?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/site/">What is this site?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/help/">How can I Help?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Community</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/join/">Join Us</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/mission-vision-values/">Mission, Vision, Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/code-of-conduct/">Code of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/space/">SCN Community Lab Space</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/partners/">Our Partners</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/tech-help/">Community Tech Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/community-networking-toolkit/">Community Networking Toolkit</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Learn</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/wireless-communication/">Wireless Communication</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/cable-crimping/">Crimping Ethernet Cables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/lte-networks/">LTE Networks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/networking/">Networking</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Infrastructure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/hardware/">Hardware Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/software/">Software Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/peering/">Public ASN Peering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/librenms-manager-setup/">Network Monitoring 1. LibreNMS Network Manager Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/epc-setup/">Step 1. LTE Core Network Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/sas-setup/">Step 2. eNodeB and SAS Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../infrastructure/proxmox-vaultwarden-deployment/">Proxmox Deployment Guide - Vaultwarden</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Librenms</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/deploy/">Deploying</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/upgrade/">Upgrading</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../infrastructure/librenms/backup/">Backing Up</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Contribute</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../contribute/contribute/">Contribute to SCN Docs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Seattle Community Network Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">Hardware Overview</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="our-hardware">Our Hardware</h1>
+<p>This page will be an overview of some of the core pieces of hardware that we use to deploy our sites.</p>
+<p>This page is in development, please contact us at lcl@seattlecommunitynetwork.org if you would like to learn more about the hardware we use.</p>
+<h1 id="todo"><strong>TODO</strong></h1>
+<h2 id="network-site-equipment">Network Site Equipment</h2>
+<h3 id="base-station-enodeb">Base Station (eNodeB)</h3>
+<p><img alt="Baicells Nova 233 Base Station Marketing Image" src="https://www.doubleradius.com/images/Nova-233-3-5GHz-1W-Gen2-mBS1105_02.jpg?resizeid=3&amp;resizeh=1000&amp;resizew=1000" /></p>
+<p>Baicells Nova 233 3.5GHz 1W Gen2</p>
+<p>More info <a href="https://www.doubleradius.com/baicells-nova-233-gen-2-enodeb-outdoor-base-station">here</a></p>
+<h3 id="panel-antennas-enodeb">Panel Antennas (eNodeB)</h3>
+<p><img alt="Alpha Wireless Antenna Marketing Image" src="https://www.lastmilegear.com/wp-content/uploads/2017/12/aw3014.jpg" /></p>
+<p>Alpha Wireless, 3.3-3.8GHz, 2x2 MIMO, 18dBi, +/-45°, 65°</p>
+<p>More info <a href="https://www.lastmilegear.com/shop/alpha-aw3014/">here</a></p>
+<h3 id="core-network-computer-epc">Core Network Computer (EPC)</h3>
+<p><img alt="Qotom Mini PC Marketing Image" src="https://www.qotom.net/upload/thumb_src/400_400/1526031726.jpg" /></p>
+<p>Qotom Mini PC Q190G4N S07</p>
+<p>Key features:
+- 4 ethernet ports
+- designed to be run 24/7
+- small and quiet
+- cheap</p>
+<p>More info <a href="https://www.qotom.net/product/36.html">here</a></p>
+<h2 id="user-access-devices">User Access Devices</h2>
+<h3 id="lte-consumer-premises-equipment-cpe">LTE Consumer Premises Equipment (CPE)</h3>
+<p><img alt="Baicells Atom CPE Marketing Image" src="https://www.lastmilegear.com/wp-content/uploads/2018/02/Baicells-Atom-eg8035L.jpg" /></p>
+<p>Baicells Atom OD04 3.5GHz 14dBi</p>
+<p>More info <a href="https://www.lastmilegear.com/shop/atom-od04-3-5ghz-14dbi-gen2/">here</a></p>
+<h3 id="outdoor-wifi-router">Outdoor WiFi Router</h3>
+<p><img alt="Mikrotik OmniTIK 5 PoE ac Marketing Image" src="https://www.wifi-stock.com/full/omnitik_5ac.jpg?size=10" /></p>
+<p>Mikrotik OmniTIK 5 PoE ac</p>
+<p>Outdoor router of choice for NYC Mesh, so it has been tried and tested. Good balance of quality and price.</p>
+<p>More info <a href="https://mikrotik.com/product/rbomnitikpg_5hacd">here</a></p>
+<h3 id="home-wifi-router">Home WiFi Router</h3>
+<p><img alt="TP-Link Archer A5 Router Marketing Image" src="https://m.media-amazon.com/images/I/51R2a9p-vNL._AC_SS450_.jpg" /></p>
+<p>TP-Link Archer A5 Router</p>
+<p>More info <a href="https://www.tp-link.com/us/home-networking/wifi-router/archer-a5/">here</a></p>
+<h3 id="cbrs-compatible-unlocked-smartphone">CBRS-Compatible Unlocked Smartphone</h3>
+<p>We purchase refurbished Google Pixel 4 smartphones because they are affordable, provide all
+necessary smartphone features, and are CBRS-compatible.</p>
+<p>Note that purchasing CBRS-compatible phones can be a logistical challenge. We've experienced trouble purchasing
+from vendors that send incorrect models of phones that don't support CBRS band and we had to go back and forth.
+Test your phones before distributing them!</p>
+<p>Here is <a href="https://www.backmarket.com/search?q=pixel%204&amp;ga_search=pixel%204">one spot</a> to purchase refurbished phones.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../epc-setup/" class="btn btn-neutral float-left" title="Step 1. LTE Core Network Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../librenms-manager-setup/" class="btn btn-neutral float-right" title="Network Monitoring 1. LibreNMS Network Manager Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../epc-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../librenms-manager-setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
