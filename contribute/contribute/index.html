@@ -124,22 +124,18 @@
     <li class="toctree-l2"><a class="reference internal" href="#looking-to-help">Looking to help?</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#editing-process">Editing process</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#markdown-files">Markdown files</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#markdown-editors">Markdown Editors</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markdown-files">Markdown files</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#markdown-editors">Markdown Editors</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#local-development">Local Development</a>
-        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#using-mkdocs">Using MkDocs</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#documentation-directory-structure">Documentation Directory Structure</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#static-files">Static Files</a>
+    <li class="toctree-l2"><a class="reference internal" href="#deployment">Deployment</a>
     </li>
     </ul>
                   </li>
@@ -180,13 +176,13 @@ us and we'll be able to help you!</p>
 <li>Get your own copy of the <a href="https://github.com/Local-Connectivity-Lab/scn-documentation">repo</a></li>
 <li>Modify the documentation in your own repo (for more information see section on Local Development)</li>
 <li>Submit a pull request</li>
-<li>Wait for someone to review and accept the request</li>
+<li>Wait for someone to review and approve the request. You can also nudge someone who has access to approve it.</li>
 </ol>
 <p>The rest of this page will explain all the details you need to know about the directory structure, markdown, and other quirks for editing this documentation. Make sure to read everything!</p>
-<h2 id="markdown-files">Markdown files</h2>
+<h3 id="markdown-files">Markdown files</h3>
 <p>All our documentation is stored in 'Markdown' files so that they can be easily
 modified and changed without heavy technical knowledge.</p>
-<h3 id="markdown-editors">Markdown Editors</h3>
+<h4 id="markdown-editors">Markdown Editors</h4>
 <ul>
 <li>
 <p>A nice and simple online editor is <a href="https://stackedit.io/app#">StackEdit</a> which will let you type in markdown and see what it would look like in realtime in split-screen.</p>
@@ -199,17 +195,19 @@ but it also allows you to connect to your own GitHub repo and pull/push.</p>
 </ul>
 </li>
 </ul>
-<h2 id="local-development">Local Development</h2>
 <h3 id="using-mkdocs">Using MkDocs</h3>
 <p><a href="https://www.mkdocs.org/">MkDocs</a> is pretty simple, just install it through pip then you can run <code>mkdocs serve</code> to locally view the website it will generate.</p>
-<h2 id="documentation-directory-structure">Documentation Directory Structure</h2>
 <p>Each directory has a <code>.pages</code> file that declares the order each file/folder in that directory will show up.
 Children pages are implicit in the directory structure</p>
-<h2 id="static-files">Static Files</h2>
 <p>If you need static files for any of your pages, you should put them in the <code>assets</code> folder within the top level <code>docs</code> folder</p>
 <p>For example, for the cable-crimping page, the images for the tutorial are located in the "assets/cable-crimping" folder. These images can then be referenced relatively with the following standard markdown image syntax:</p>
 <pre><code class="language-markdown">![RJ45 Crimping Tool](../assets/cable-crimping/kit-crimping-tool.jpg)
 </code></pre>
+<h2 id="deployment">Deployment</h2>
+<p>The default branch of the repo is <code>gh-pages-src</code> which is where development should be done. 
+One of the things that means is that pull requests will request to be merged by default into this branch. </p>
+<p>When a merge happens, a github workflow is set up (see .github/workflows) to listen to new commits, and then transform the source to something that can be served by a static file server.
+These build artifacts are automatically comitted to the branch <code>gh-pages</code> whose latest commit is what our documentation site serves.</p>
               
             </div>
           </div><footer>
