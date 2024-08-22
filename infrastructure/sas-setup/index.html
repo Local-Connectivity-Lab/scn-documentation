@@ -88,105 +88,31 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../learn/networking/">Networking</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Infrastructure</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware Overview</a>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/hardware/">Hardware Overview</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../software/">Software Overview</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/software/">Software Overview</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../peering/">Public ASN Peering</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/peering/">Public ASN Peering</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../librenms-manager-setup/">Network Monitoring 1. LibreNMS Network Manager Configuration</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/librenms-manager-setup/">Network Monitoring 1. LibreNMS Network Manager Configuration</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../epc-setup/">Step 1. LTE Core Network Setup</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/epc-setup/">Step 1. LTE Core Network Setup</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Step 2. eNodeB and SAS Setup</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#i-get-set-up-with-a-spectrum-access-system-sas">I. Get set up with a Spectrum Access System (SAS)</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#a-why-get-set-up-with-a-sas">A. Why get set up with a SAS?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#b-cpi-license">B. CPI License</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#c-sas-pricing-agreements">C. SAS Pricing Agreements</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#d-sas-registration">D. SAS Registration</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ii-register-device-in-sas-portal">II. Register device in SAS portal</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#a-once-you-have-an-account-on-an-sas-service-register-your-devices-on-their-portal-or-dashboard">A. Once you have an account on an SAS service, register your devices on their portal or dashboard.</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#b-our-setup">B. Our Setup</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#c-example-configuration">C. Example Configuration</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#d-cpi-signature">D. CPI Signature</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#e-status-tab">E. Status Tab</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#f-other-helpful-links">F. Other helpful links</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#iii-steps-in-baicells-cloud-interface">III. Steps in Baicells Cloud interface</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#a-make-a-baicells-omc-account">A. Make a Baicells OMC account.</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#b-take-note-of-the-cloudkey">B. Take note of the CloudKey</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#c-set-your-sas-service-provider">C. Set your SAS service provider.</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#iv-steps-in-baicells-management-interface">IV. Steps in Baicells management interface</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#a-local-management-portal">A. Local Management Portal</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#b-upgrade-firmware">B. Upgrade firmware</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#c-get-everything-connected">C. Get everything connected</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#1-configure-internet-access-wan">1. Configure Internet Access (WAN)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#2-check-internet-access">2. Check Internet access</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#3-reboot-as-needed">3. Reboot as needed</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#4-attach-to-baicells-omc">4. Attach to Baicells OMC</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#5-disable-ipsec">5. Disable IPsec</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#6-disable-gps-sync-when-testing-indoors">6. Disable GPS Sync when testing indoors.</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#7-change-the-mme-settings">7. Change the MME settings</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#8-enable-sas">8. Enable SAS</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#9-check-baicells-cloud-omc-to-debug-issues">9. Check Baicells CLOUD OMC to debug issues</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#v-how-to-change-location-antenna-properties-etc-after-deployment">V. How to change location, antenna properties, etc. after deployment</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/enb-setup/">Step 2. eNodeB and SAS Setup</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../proxmox-vaultwarden-deployment/">Proxmox Deployment Guide - Vaultwarden</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/proxmox-vaultwarden-deployment/">Proxmox Deployment Guide - Vaultwarden</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Librenms</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../librenms/deploy/">Deploying</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorials/librenms/deploy/">Deploying</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../librenms/upgrade/">Upgrading</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorials/librenms/upgrade/">Upgrading</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../librenms/backup/">Backing Up</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorials/librenms/backup/">Backing Up</a>
                 </li>
     </ul>
                   </li>
@@ -486,8 +412,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../epc-setup/" class="btn btn-neutral float-left" title="Step 1. LTE Core Network Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../proxmox-vaultwarden-deployment/" class="btn btn-neutral float-right" title="Proxmox Deployment Guide - Vaultwarden">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../proxmox-vaultwarden-deployment/" class="btn btn-neutral float-left" title="Proxmox Deployment Guide - Vaultwarden"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../software/" class="btn btn-neutral float-right" title="Software Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -510,10 +436,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../epc-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../proxmox-vaultwarden-deployment/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../proxmox-vaultwarden-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../software/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
