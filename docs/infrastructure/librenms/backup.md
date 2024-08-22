@@ -1,2 +1,0 @@
-# Backing Up
-In the future when we want to back up the rrd folder of a docker install, you just need to copy the compose/librenms/rrd folder. If you want to back up the database, you need to go into the container called `librenms_db` and do a mysqldump with the user `librenms` with the database librenms and whatever password you set, probably in the environment variables of the compose file of the deployment This means something like `mysqldump librenms -u librenms --password=<your_password> > librenms.sql`
