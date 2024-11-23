@@ -1,5 +1,5 @@
 ---
-title: Grafana Logging Dashboard Guide 
+title: Grafana Logging Dashboard Guide
 ---
 
 # Grafana Server Log Monitoring Dashboard Setup
