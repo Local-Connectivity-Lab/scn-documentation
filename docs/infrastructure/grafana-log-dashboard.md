@@ -1,10 +1,10 @@
 ---
-title: Grafana Logging Dashboard Guide
+title: Grafana Log Dashboard Guide
 ---
 
-# Grafana Server Log Monitoring Dashboard Setup
+### Developed By: Rudra Prakash Singh, Esther Jang
 
-## Developed By: Rudra Prakash Singh, Esther Jang
+---
 
 This guide walks you through the process of setting up a Grafana Server Log Monitoring Dashboard, including the installation and configuration of Grafana, Loki, and Promtail for log aggregation and visualization. It also covers setting up scripts for automating log retrieval and dashboard updates.
 
@@ -287,5 +287,3 @@ nohup python3 server.py > server.log 2>&1 &
 2. Add the links to the above Python scripts with the appropriate port (`8080` for log pulling and `8081` for triggering Promtail).
 
 3. This will enable users to pull logs instantly as they wish. Make sure promtail activation button is run first when opening dashboard, and then pulling logs button after.
-
----
