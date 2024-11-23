@@ -7,4 +7,5 @@ nav:
   - epc-setup.md
   - enb-setup.md
   - proxmox-vaultwarden-deployment.md
+  - grafana-log-dashboard.md
   - librenms
