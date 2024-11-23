@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Grafana Log Dashboard Guide - Seattle Community Network Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Grafana Log Dashboard Guide";
+        var mkdocs_page_input_path = "tutorials/grafana-log-dashboard.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Seattle Community Network Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Faq</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/connection/">How do I get Internet?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/what/">What is a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/why/">Why have a Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/about/">What is the Seattle Community Network?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/how/">How does SCN Work?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/site/">What is this site?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/help/">How can I Help?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Community</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/join/">Join Us</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/mission-vision-values/">Mission, Vision, Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/code-of-conduct/">Code of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/space/">SCN Community Lab Space</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/partners/">Our Partners</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/tech-help/">Community Tech Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../community/community-networking-toolkit/">Community Networking Toolkit</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Learn</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/wireless-communication/">Wireless Communication</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/cable-crimping/">Crimping Ethernet Cables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/lte-networks/">LTE Networks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../learn/networking/">Networking</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../software/">Software Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../peering/">Public ASN Peering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../librenms-manager-setup/">Network Monitoring 1. LibreNMS Network Manager Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../epc-setup/">Step 1. LTE Core Network Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../enb-setup/">Step 2. eNodeB and SAS Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../proxmox-vaultwarden-deployment/">Proxmox Deployment Guide - Vaultwarden</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Librenms</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../librenms/deploy/">Deploying</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../librenms/upgrade/">Upgrading</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../librenms/backup/">Backing Up</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Contribute</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../contribute/contribute/">Contribute to SCN Docs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Seattle Community Network Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">Grafana Log Dashboard Guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="developed-by-rudra-prakash-singh-esther-jang">Developed By: Rudra Prakash Singh, Esther Jang</h3>
+<hr />
+<p>This guide walks you through the process of setting up a Grafana Server Log Monitoring Dashboard, including the installation and configuration of Grafana, Loki, and Promtail for log aggregation and visualization. It also covers setting up scripts for automating log retrieval and dashboard updates.</p>
+<hr />
+<h2 id="step-1-install-grafana-via-cli">Step 1: Install Grafana via CLI</h2>
+<ol>
+<li><strong>Install Grafana</strong> on your server using the following instructions for Debian-based systems:</li>
+<li>
+<p>Follow the installation guide here: <a href="https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/">Grafana Installation on Debian</a></p>
+</li>
+<li>
+<p>Once installed, start Grafana and make sure it's accessible via a port (default: <code>3000</code>).</p>
+</li>
+<li>
+<p>After Grafana is running, create an admin account. Once logged in, you'll land on the Grafana homepage.</p>
+</li>
+</ol>
+<hr />
+<h2 id="step-2-install-loki">Step 2: Install Loki</h2>
+<ol>
+<li><strong>Install Loki</strong> by following the official instructions for Docker:</li>
+<li><a href="https://grafana.com/docs/loki/latest/setup/install/docker/">Loki Installation via Docker</a></li>
+</ol>
+<hr />
+<h2 id="step-3-create-a-docker-compose-file-for-loki">Step 3: Create a Docker Compose File for Loki</h2>
+<p>To set up Loki with Grafana, create a <code>docker-compose.yml</code> file:</p>
+<pre><code class="language-yaml">version: &quot;3&quot;  # The version can be removed if you're using a recent Docker Compose version.
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - &quot;3000:3000&quot;
+    networks:
+      - loki
+    volumes:
+      - grafana-data:/path # [CHANGE THIS LINE] Adding persistence for Grafana data 
+
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - &quot;3100:3100&quot;
+    networks:
+      - loki
+    volumes:
+      - ./path  # [CHANGE THIS LINE] Local directory for Loki data
+    user: &quot;10001&quot;  # Run Loki as the appropriate user to avoid permission issues
+
+  promtail:
+    image: grafana/promtail:latest
+    command: &quot;-config.file=/etc/promtail/config.yaml&quot; # [CHANGE THIS LINE] 
+    networks:
+      - loki
+    volumes:
+      - &quot;/var/log:/var/log&quot;  # [CHANGE THIS LINE] Mounting host logs
+
+networks:
+  loki:
+
+volumes:
+  grafana-data:  # Declaring the volume for Grafana
+</code></pre>
+<hr />
+<h2 id="step-4-install-promtail">Step 4: Install Promtail</h2>
+<ol>
+<li><strong>Install Promtail</strong> by following the official instructions:</li>
+<li><a href="https://grafana.com/docs/loki/latest/send-data/promtail/installation/">Promtail Installation Guide</a></li>
+</ol>
+<hr />
+<h2 id="step-5-configure-data-sources-logs">Step 5: Configure Data Sources (Logs)</h2>
+<p>To aggregate logs from other servers, we set up a method of transferring logs to the Grafana server. The logs are pulled into the Grafana server, where they are processed and rendered on a Grafana dashboard.</p>
+<p>Here’s the updated section of the <code>README</code> with the requested changes marked. The rest remains unchanged.</p>
+<hr />
+<h2 id="step-5-configure-data-sources-logs_1">Step 5: Configure Data Sources (Logs)</h2>
+<h3 id="51-write-a-bash-script-to-pull-logs">5.1: Write a Bash Script to Pull Logs</h3>
+<p>Here’s an example of a script (<code>transfer_logs.sh</code>) to pull logs from another server:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+# Define variables
+REMOTE_SERVER=&quot;root@server_ip&quot;  # [CHANGE THIS LINE] Remote server IP
+SSH_KEY_PATH=&quot;path&quot;  # [CHANGE THIS LINE] Path to SSH key
+DEST_DIR=&quot;path&quot;  # [CHANGE THIS LINE] Destination directory on the Grafana server
+
+# Define paths for logs
+DOCKER_LOG=&quot;path/to/docker/log&quot;  # [CHANGE THIS LINE] Path to Docker log on remote server
+NGINX_LOG=&quot;path/to/nginx/log&quot;  # [CHANGE THIS LINE] Path to NGINX log on remote server
+SYSLOG=&quot;path/to/syslog&quot;  # [CHANGE THIS LINE] Path to syslog on remote server
+
+# Create directories if they don't exist
+mkdir -p &quot;$DEST_DIR/docker&quot; &quot;$DEST_DIR/nginx&quot; &quot;$DEST_DIR/syslog&quot;
+
+# Transfer logs
+echo &quot;Transferring Docker log...&quot;
+ssh -i $SSH_KEY_PATH $REMOTE_SERVER &quot;cat $DOCKER_LOG&quot; &gt; &quot;$DEST_DIR/docker/docker.log&quot;
+
+echo &quot;Transferring NGINX log...&quot;
+ssh -i $SSH_KEY_PATH $REMOTE_SERVER &quot;cat $NGINX_LOG&quot; &gt; &quot;$DEST_DIR/nginx/error.log&quot;
+
+echo &quot;Transferring syslog...&quot;
+ssh -i $SSH_KEY_PATH $REMOTE_SERVER &quot;cat $SYSLOG&quot; &gt; &quot;$DEST_DIR/syslog/syslog.log&quot;
+
+echo &quot;All logs have been successfully transferred.&quot;
+</code></pre>
+<hr />
+<h3 id="52-configure-promtail-to-scrape-logs">5.2: Configure Promtail to Scrape Logs</h3>
+<p>Next, create a <code>promtail-config.yaml</code> file to let Promtail know where the logs are located:</p>
+<pre><code class="language-yaml">server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://server_ip:3100/loki/api/v1/push  # [CHANGE THIS LINE] Loki's URL
+
+scrape_configs:
+  - job_name: docker_logs
+    static_configs:
+      labels:
+        job: docker
+        __path__: /path/to/logs/on/grafana/server/docker/*.log  # [CHANGE THIS LINE] Path to Docker logs
+  - job_name: nginx_logs
+    static_configs:
+      labels:
+        job: nginx
+        __path__: /path/to/logs/on/grafana/server/nginx/*.log  # [CHANGE THIS LINE] Path to NGINX logs
+  - job_name: syslog_logs
+    static_configs:
+      labels:
+        job: syslog
+        __path__: /path/to/logs/on/grafana/server/syslog/*.log  # [CHANGE THIS LINE] Path to syslog logs
+</code></pre>
+<hr />
+<h2 id="step-6-configure-grafana-to-use-loki">Step 6: Configure Grafana to Use Loki</h2>
+<ol>
+<li>
+<p>Open Grafana’s homepage and click the <strong>three vertical lines</strong> in the top-left corner.</p>
+</li>
+<li>
+<p>Navigate to <strong>Data Sources</strong>, then click <strong>Add Data Source</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Loki</strong> as the data source type.</p>
+</li>
+<li>
+<p>Define the <strong>URL</strong> of your Loki instance, which is typically <code>http://localhost:3100</code>.</p>
+</li>
+<li>
+<p>Click <strong>Save &amp; Test</strong>. You should see a success message confirming the connection.</p>
+</li>
+</ol>
+<hr />
+<h2 id="step-7-explore-data-in-grafana">Step 7: Explore Data in Grafana</h2>
+<ol>
+<li>
+<p>Go to the <strong>Explore</strong> section in Grafana.</p>
+</li>
+<li>
+<p>Use label filters and run queries to see the logs coming from Promtail. The labels in the filters correspond to the <code>labels</code> defined in the <code>promtail-config.yaml</code>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="step-8-create-a-dashboard">Step 8: Create a Dashboard</h2>
+<ol>
+<li>
+<p>On the left sidebar in Grafana, click <strong>Dashboards</strong> &gt; <strong>New Dashboard</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add Panel</strong> to create a new panel.</p>
+</li>
+<li>
+<p>Under <strong>Data Source</strong>, select <strong>Loki</strong>.</p>
+</li>
+<li>
+<p>Write queries to retrieve logs for display. Use different labels to filter log data as needed.</p>
+</li>
+<li>
+<p>Choose a visualization type (e.g., <strong>Logs</strong>).</p>
+</li>
+<li>
+<p>Repeat the process to add more visualizations, then adjust the layout and size to suit your needs.</p>
+</li>
+<li>
+<p>Save the dashboard once you are satisfied with the layout.</p>
+</li>
+</ol>
+<hr />
+<h2 id="step-9-automate-log-retrieval-and-update-dashboard">Step 9: Automate Log Retrieval and Update Dashboard</h2>
+<p>To make the process of pulling logs and updating the Grafana dashboard more automated, create two Python scripts:</p>
+<h3 id="91-transfer_serverpy">9.1: <code>transfer_server.py</code></h3>
+<p>This script triggers the Promtail process to start log scraping when accessed via an HTTP request:</p>
+<pre><code class="language-python">from http.server import BaseHTTPRequestHandler, HTTPServer
+import subprocess
+
+COMMAND = &quot;sudo ./promtail-linux-amd64 -config.file=promtail-config.yaml&quot;
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == &quot;/run&quot;:
+            try:
+                subprocess.Popen(COMMAND, shell=True)
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b&quot;Command executed successfully.&quot;)
+            except Exception as e:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(f&quot;Error executing command: {e}&quot;.encode())
+        else:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b&quot;Not found.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    server_address = ('server_ip', 8081)
+    httpd = HTTPServer(server_address, RequestHandler)
+    print(&quot;Server running on http://server_ip. Access /run to execute the command.&quot;)
+    httpd.serve_forever()
+</code></pre>
+<h3 id="92-serverpy">9.2: <code>server.py</code></h3>
+<p>This script pulls the logs by executing the previously created bash script:</p>
+<pre><code class="language-python">from http.server import BaseHTTPRequestHandler, HTTPServer
+import subprocess
+
+class ScriptHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        script_path = &quot;/path/to/transfer_logs.sh&quot; # [CHANGE THIS LINE] 
+
+        try:
+            subprocess.run([script_path], check=True)
+            self.send_response(200)
+            self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)
+            self.end_headers()
+            self.wfile.write(b&quot;Logs Pulled Successfully.&quot;)
+        except subprocess.CalledProcessError:
+            self.send_response(500)
+            self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)
+            self.end_headers()
+            self.wfile.write(b&quot;Failed to pull logs.&quot;)
+
+def run(server_class=HTTPServer, handler_class=ScriptHandler, port=8080):
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f&quot;Starting http server on port {port}&quot;)
+    httpd.serve_forever()
+
+if __name__ == &quot;__main__&quot;:
+    run()
+</code></pre>
+<p>Run both Python scripts in the background using <code>nohup</code>:</p>
+<pre><code class="language-bash">nohup python3 transfer_server.py &gt; transfer_server.log 2&gt;&amp;1 &amp;
+nohup python3 server.py &gt; server.log 2&gt;&amp;1 &amp;
+</code></pre>
+<hr />
+<h2 id="step-10-add-buttons-to-grafana-dashboard">Step 10: Add Buttons to Grafana Dashboard</h2>
+<ol>
+<li>
+<p>In Grafana, go to <strong>Settings</strong> &gt; <strong>Links</strong>.</p>
+</li>
+<li>
+<p>Add the links to the above Python scripts with the appropriate port (<code>8080</code> for log pulling and <code>8081</code> for triggering Promtail).</p>
+</li>
+<li>
+<p>This will enable users to pull logs instantly as they wish. Make sure promtail activation button is run first when opening dashboard, and then pulling logs button after.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../epc-setup/" class="btn btn-neutral float-left" title="Step 1. LTE Core Network Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hardware/" class="btn btn-neutral float-right" title="Hardware Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../epc-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
