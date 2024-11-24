@@ -23,7 +23,7 @@ Note: When you're installing Ubuntu, we suggest choosing the "minimal install" o
 
 ## Software Components
 
-As of August 2021, in the [Open5GS software package](https://github.com/open5gs/open5gs), the LTE-specific components (which run on Ubuntu as [systemd](http://manpages.ubuntu.com/manpages/bionic/man1/systemd.1.html) services) are as follows:
+As of November 2024, in the [Open5GS software package](https://github.com/open5gs/open5gs), the LTE-specific components (which run on Ubuntu as [systemd](http://manpages.ubuntu.com/manpages/bionic/man1/systemd.1.html) services) are as follows:
 
 * MME - Mobility Management Entity: `open5gs-mmed.service`
 * HSS - Home Subscriber Server: `open5gs-hssd.service`
@@ -51,12 +51,15 @@ Note: If installing over a `ssh` connection, we recommend using `tmux` or anothe
 # Step 2: Configure Networking
 
 Remember to follow all the network configuration steps in the [Open5GS Quickstart documentation](https://open5gs.org/open5gs/docs/guide/01-quickstart/). For SCN's Ubuntu machines, this means:
+
 - Allowing IP forwarding on your machine, e.g. via the following command:
 ```bash
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
-- Setting up NAT rules using `iptables` so that traffic from the eNB can reach the Internetand vice versa
 - Using Netplan to configure network interfaces with IP addresses in the desired way.
+- Setting up NAT rules using `iptables` so that traffic from the eNB can reach the Internet and vice versa
+
+The latter two steps are explained in detail below. 
 
 ## Netplan Configuration
 ### A. Recommended
@@ -71,7 +74,7 @@ line. A list of network interfaces will appear in the terminal. Find the ones
 corresponding to your ethernet ports (their names usually start with “eth,”
 “enp,” or “enx”).
 
-For Ubuntu 20.04, we're currently using the Netplan program to manage our network configuration.
+For Ubuntu 22.04, we're currently using the Netplan program to manage our network configuration.
 Create a file in the `/etc/netplan` directory (i.e. a folder) named
 `99-open5gs-config.yaml`, and add the following lines, substituting the correct
 interface names and subnets for your configuration:
