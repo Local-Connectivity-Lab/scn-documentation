@@ -279,11 +279,13 @@ sudo ./open5gs-dbctl add 460660003400030 192.168.20.30 0x00112233445566778899AAB
 ```
 
 Running the `./open5gs-dbctl` command on its own will output a list of allowed command syntax, of which the following can be particularly handy:
-- `add {imsi key opc}: adds a user to the database with default values`
-- `add {imsi ip key opc}: adds a user to the database with default values and a IPv4 address for the UE`
-- `remove {imsi}: removes a user from the database`
-- `static_ip {imsi ip4}: adds a static IP assignment to an already-existing user`
-- `add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific apn`
+```bash
+add {imsi key opc}: adds a user to the database with default values
+add {imsi ip key opc}: adds a user to the database with default values and a IPv4 address for the UE
+remove {imsi}: removes a user from the database
+static_ip {imsi ip4}: adds a static IP assignment to an already-existing user
+add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific apn
+```
 
 The help text also tells you that "default values are as follows: APN "internet", dl_bw/ul_bw 1 Gbps, PGW address is 127.0.0.3, IPv4 only".
 
