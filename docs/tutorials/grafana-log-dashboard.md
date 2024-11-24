@@ -83,8 +83,6 @@ volumes:
 
 To aggregate logs from other servers, we set up a method of transferring logs to the Grafana server. The logs are pulled into the Grafana server, where they are processed and rendered on a Grafana dashboard.
 
-Here’s the updated section of the `README` with the requested changes marked. The rest remains unchanged.
-
 ---
 
 ## Step 5: Configure Data Sources (Logs)
