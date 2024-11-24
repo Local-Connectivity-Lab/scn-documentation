@@ -37,7 +37,7 @@ We would also recommend running the optional WebUI (Web User Interface) service:
 
 The following steps will walk you through this installation process.
 
-# Step 1: Open5GS Install Notes
+# Step 1: Install Open5GS (Notes and Pointers)
 
 Install Open5GS following the [Open5GS Quickstart documentation](https://open5gs.org/open5gs/docs/guide/01-quickstart/) based on your operating system and desired implementation (e.g. "bare metal" directly on the operating system vs. [Docker](https://github.com/wildeyedskies/docker-open5gs-basic-config)).
 There are even [VoLTE](https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/) and [Dockerized VoLTE](https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/) implementations of Open5GS.
@@ -236,11 +236,11 @@ The default WebUI login credentials are as follows:
 
 # Step 4: Add Users to Open5GS database
 
-You can manage users using the Open5GS WebUI, or using a script provided in the [Open5GS GitHub repository](https://github.com/open5gs/open5gs).
-Our preferred strategy is to use the script, which supports automation better and does not require the WebUI to be running. 
-(Remember that an important pre-condition to adding users is to have SIM cards or eSIMs with their respective IMSIs and secret keys, which must be procured separately. 
+(Note that an important pre-condition to adding users is to have SIM cards or eSIMs to give to the users for authentication, along with their respective IMSIs and secret keys to register them onto the EPC. These must be procured separately. 
 WIP- We will endeavor to make guides for these processes available soon.)
 
+You can manage users using the Open5GS WebUI, or using a script provided in the [Open5GS GitHub repository](https://github.com/open5gs/open5gs).
+Our preferred strategy is to use the script, which supports automation better and does not require the WebUI to be running. 
 Clone the repository into the EPC machine:
 
 ```bash
