@@ -167,7 +167,7 @@
 <p>In SCN we will typically perform these installation steps using a fresh install of Ubuntu 22.04 on an x86-64-based computer; however, any operating system that <code>open5gs</code> supports should work.</p>
 <p>Note: When you're installing Ubuntu, we suggest choosing the "minimal install" option that doesn’t install extra unnecessary software. In prior installs this has led to version conflicts.</p>
 <h2 id="software-components">Software Components</h2>
-<p>As of August 2021, in the <a href="https://github.com/open5gs/open5gs">Open5GS software package</a>, the LTE-specific components (which run on Ubuntu as <a href="http://manpages.ubuntu.com/manpages/bionic/man1/systemd.1.html">systemd</a> services) are as follows:</p>
+<p>As of November 2024, in the <a href="https://github.com/open5gs/open5gs">Open5GS software package</a>, the LTE-specific components (which run on Ubuntu as <a href="http://manpages.ubuntu.com/manpages/bionic/man1/systemd.1.html">systemd</a> services) are as follows:</p>
 <ul>
 <li>MME - Mobility Management Entity: <code>open5gs-mmed.service</code></li>
 <li>HSS - Home Subscriber Server: <code>open5gs-hssd.service</code></li>
@@ -187,14 +187,17 @@ A similar step-by-step tutorial to this one can be found <a href="https://medium
 To do this, first install MongoDB as described in the Quickstart guide. Then follow instructions under the "Ubuntu" section to install Open5GS via apt.</p>
 <p>Note: If installing over a <code>ssh</code> connection, we recommend using <code>tmux</code> or another program in case you get disconnected from the session in the process. </p>
 <h1 id="step-2-configure-networking">Step 2: Configure Networking</h1>
-<p>Remember to follow all the network configuration steps in the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart documentation</a>. For SCN's Ubuntu machines, this means:
-- Allowing IP forwarding on your machine, e.g. via the following command:</p>
+<p>Remember to follow all the network configuration steps in the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart documentation</a>. For SCN's Ubuntu machines, this means:</p>
+<ul>
+<li>Allowing IP forwarding on your machine, e.g. via the following command:</li>
+</ul>
 <pre><code class="language-bash">sudo sysctl -w net.ipv4.ip_forward=1
 </code></pre>
 <ul>
-<li>Setting up NAT rules using <code>iptables</code> so that traffic from the eNB can reach the Internetand vice versa</li>
 <li>Using Netplan to configure network interfaces with IP addresses in the desired way.</li>
+<li>Setting up NAT rules using <code>iptables</code> so that traffic from the eNB can reach the Internet and vice versa</li>
 </ul>
+<p>The latter two steps are explained in detail below. </p>
 <h2 id="netplan-configuration">Netplan Configuration</h2>
 <h3 id="a-recommended">A. Recommended</h3>
 <p>For this recommended configuration, <strong>we require an EPC
@@ -205,7 +208,7 @@ out the names of your computer's ethernet interfaces. Use the command <code>ip a
 line. A list of network interfaces will appear in the terminal. Find the ones
 corresponding to your ethernet ports (their names usually start with “eth,”
 “enp,” or “enx”).</p>
-<p>For Ubuntu 20.04, we're currently using the Netplan program to manage our network configuration.
+<p>For Ubuntu 22.04, we're currently using the Netplan program to manage our network configuration.
 Create a file in the <code>/etc/netplan</code> directory (i.e. a folder) named
 <code>99-open5gs-config.yaml</code>, and add the following lines, substituting the correct
 interface names and subnets for your configuration:</p>
