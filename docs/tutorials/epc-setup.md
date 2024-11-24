@@ -43,10 +43,35 @@ Install Open5GS following the [Open5GS Quickstart documentation](https://open5gs
 There are even [VoLTE](https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/) and [Dockerized VoLTE](https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/) implementations of Open5GS.
 A similar step-by-step tutorial to this one can be found [here](https://medium.com/networkers-fiit-stu/setting-up-open5gs-a-step-by-step-guide-or-how-we-set-up-our-lab-environment-5da1c8db0439).
 
-In SCN we have run Open5GS successfully using Ubuntu 20.04 and 22.04, on bare metal or in Virtual Machines, installed via the `apt` package manager.
-To do this, first install MongoDB as described in the Quickstart guide. Then follow instructions under the "Ubuntu" section to install Open5GS via apt.
+In SCN we have run Open5GS successfully using Ubuntu 20.04 and 22.04, on bare metal or in Virtual Machines, installed via the `apt` package manager (see Step "2. Install Open5GS with a Package Manager" of the [Quickstart](https://open5gs.org/open5gs/docs/guide/01-quickstart/)).
+First install MongoDB as described in the Quickstart. Then follow instructions under the "Ubuntu" section to install Open5GS via apt.
 
 Note: If installing over a `ssh` connection, we recommend using `tmux` or another program in case you get disconnected from the session in the process. 
+
+## Configure MME and SGWU
+
+Note that for our LTE setup, the MME and SGWU are the only components whose config files you will really need to change from the defaults.
+
+### MME
+Edit the `/etc/open5gs/mme.yaml` file (as root or using `sudo`) as follows:
+- Under `mme:` -> `s1ap:` -> `server:` -> `address:`, set the IP address you will assign to the network interface (likely an ethernet port) on your EPC computer which will be connecting to the eNB. In this tutorial (to match with the Network Configuration section that follows), we will use `192.168.150.1`.
+- Under both `mme:` -> `gummei:` and `mme:` -> `tai:`, you will need to change the `plmn_id` (`mcc` and `mnc` values) to match the PLMN you are using for your network.
+- Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under `tai:` -> `tac:` will need to match the TAC number configured on the eNB (using the default of 1 is fine). 
+
+**Quick explanation:** "PLMN" refers to the [Public Land Mobile Network](https://en.wikipedia.org/wiki/Public_land_mobile_network), in which every network has to have a unique carrier ID defined by the 3-digit "mobile country code (MCC)" and a 2 or 3-digit "mobile network code (MNC)". Alternately, for iPhone compatibility in the US, SCN uses the CBRS "private LTE" PLMN assigned by Apple as described in [this doc](https://support.apple.com/guide/deployment/support-for-private-5g-and-lte-networks-depac6747317/web).
+
+- Optional: Edit `network_name:` (full and short) and `mme_name:` as desired. One of these names will show up on smartphones' lock screens as the "carrier" when the phone is attached to the network.
+
+### SGWU
+Edit the `/etc/open5gs/sgwu.yaml` file (as root or using `sudo`) as follows:
+- Under `sgwu:` -> `gtpu:` -> `server:` -> `address:`, set the IP address you will assign to the network interface on your EPC computer which will be connecting to the eNB (this should be the same as the IP address of the MME set above, if the MME and SGWU are running on the same machine). In this tutorial we will use `192.168.150.1`.
+
+As mentioned in the Quickstart, after changing the config files, you will need to restart the corresponding Open5GS daemons:
+```bash
+sudo systemctl restart open5gs-mmed
+sudo systemctl restart open5gs-sgwud
+```
+However, the MME will likely not start correctly until networking is configured, as described below.
 
 # Step 2: Configure Networking
 
@@ -219,10 +244,10 @@ The following command will start only the systemd services required for LTE. How
 sudo systemctl start open5gs-hssd.service open5gs-mmed.service open5gs-sgwud.service open5gs-sgwcd.service open5gs-pcrfd.service open5gs-upfd.service open5gs-smfd.service
 ```
 
-### Start the WebUI
+### Install and Start the WebUI
 
 The WebUI is another systemd service and runs by default on your local computer at port 9999. 
-It requires some more dependencies to install, such as `nodejs` (see Step 3. of the [Quickstart](https://open5gs.org/open5gs/docs/guide/01-quickstart/) guide). You can reach it by navigating to `http://localhost:9999` in your web browser.
+It requires some more dependencies to install, such as `nodejs` (see Step "3. Install the WebUI of Open5GS" in the [Quickstart](https://open5gs.org/open5gs/docs/guide/01-quickstart/)). You can reach it by navigating to `http://localhost:9999` in your web browser.
 
 If not already started, start it with the following command:
 
