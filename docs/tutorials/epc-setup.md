@@ -238,6 +238,8 @@ The default WebUI login credentials are as follows:
 
 You can manage users using the Open5GS WebUI, or using a script provided in the [Open5GS GitHub repository](https://github.com/open5gs/open5gs).
 Our preferred strategy is to use the script, which supports automation better and does not require the WebUI to be running. 
+(Remember that an important pre-condition to adding users is to have SIM cards or eSIMs with their respective IMSIs and secret keys, which must be procured separately. 
+WIP- We will endeavor to make guides for these processes available soon.)
 
 Clone the repository into the EPC machine:
 
