@@ -179,7 +179,7 @@
 </ul>
 <p>We would also recommend running the optional WebUI (Web User Interface) service: <code>open5gs-webui.service</code>.</p>
 <p>The following steps will walk you through this installation process.</p>
-<h1 id="step-1-open5gs-install-notes">Step 1: Open5GS Install Notes</h1>
+<h1 id="step-1-install-open5gs-notes-and-pointers">Step 1: Install Open5GS (Notes and Pointers)</h1>
 <p>Install Open5GS following the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart documentation</a> based on your operating system and desired implementation (e.g. "bare metal" directly on the operating system vs. <a href="https://github.com/wildeyedskies/docker-open5gs-basic-config">Docker</a>).
 There are even <a href="https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/">VoLTE</a> and <a href="https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/">Dockerized VoLTE</a> implementations of Open5GS.
 A similar step-by-step tutorial to this one can be found <a href="https://medium.com/networkers-fiit-stu/setting-up-open5gs-a-step-by-step-guide-or-how-we-set-up-our-lab-environment-5da1c8db0439">here</a>.</p>
@@ -319,11 +319,11 @@ It requires some more dependencies to install, such as <code>nodejs</code> (see 
 - Username : admin
 - Password : 1423</p>
 <h1 id="step-4-add-users-to-open5gs-database">Step 4: Add Users to Open5GS database</h1>
+<p>(Note that an important pre-condition to adding users is to have SIM cards or eSIMs to give to the users for authentication, along with their respective IMSIs and secret keys to register them onto the EPC. These must be procured separately. 
+WIP- We will endeavor to make guides for these processes available soon.)</p>
 <p>You can manage users using the Open5GS WebUI, or using a script provided in the <a href="https://github.com/open5gs/open5gs">Open5GS GitHub repository</a>.
 Our preferred strategy is to use the script, which supports automation better and does not require the WebUI to be running. 
-(Remember that an important pre-condition to adding users is to have SIM cards or eSIMs with their respective IMSIs and secret keys, which must be procured separately. 
-WIP- We will endeavor to make guides for these processes available soon.)</p>
-<p>Clone the repository into the EPC machine:</p>
+Clone the repository into the EPC machine:</p>
 <pre><code class="language-bash">git clone https://github.com/open5gs/open5gs.git
 </code></pre>
 <p>The script can be found in <code>misc/db/open5gs-dbctl</code> from the top level of the repository (<code>open5gs</code> folder). For example, you could run a command to add a user like this from within the <code>open5gs/misc/db</code> folder:</p>
