@@ -22,7 +22,7 @@ This is a MUST do if you don't want to get left out!
 3. Install Discord on your [computer](https://discord.com/download), [Android](https://play.google.com/store/apps/details?id=com.discord&hl=en_US&gl=US), or [iOS](https://apps.apple.com/us/app/discord-chat-talk-hangout/id985746746) device to always stay up-to-date.
 
 ## Chat with someone!
-The best way to get involved with the network is to find someone that can direct you! Most of our work happens in teams. Here's how to [join a team](https://docs.seattlecommunitynetwork.org/community/teams.html).
+The best way to get involved with the network is to find someone that can direct you! Most of our work happens in teams. Here's how to [join a team](https://docs.seattlecommunitynetwork.org/community/teams).
 
 ## Subscribe to our Google calendar!
 On our Google calendar we post regular occurring meetings and any impromptu events like social events, emergency repairs, site visits, etc.
