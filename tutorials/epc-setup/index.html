@@ -191,10 +191,10 @@ First install MongoDB as described in the Quickstart. Then follow instructions u
 <h3 id="mme">MME</h3>
 <p>Edit the <code>/etc/open5gs/mme.yaml</code> file (as root or using <code>sudo</code>) as follows:
 - Under <code>mme:</code> -&gt; <code>s1ap:</code> -&gt; <code>server:</code> -&gt; <code>address:</code>, set the IP address you will assign to the network interface (likely an ethernet port) on your EPC computer which will be connecting to the eNB. In this tutorial (to match with the Network Configuration section that follows), we will use <code>192.168.150.1</code>.
-- Under both <code>mme:</code> -&gt; <code>gummei:</code> and <code>mme:</code> -&gt; <code>tai:</code>, you will need to change the <code>plmn_id</code> (<code>mcc</code> and <code>mnc</code> values) to match the PLMN you are using for your network.
-- Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under <code>tai:</code> -&gt; <code>tac:</code> will need to match the TAC number configured on the eNB (using the default of 1 is fine). </p>
+- Under both <code>mme:</code> -&gt; <code>gummei:</code> and <code>mme:</code> -&gt; <code>tai:</code>, you will need to change the <code>plmn_id:</code> (<code>mcc:</code> and <code>mnc:</code> values) to match the PLMN you are using for your network. In SCN we use <code>315</code> for the MCC and <code>010</code> for the MNC, as explained in the "Quick explanation" below.</p>
 <p><strong>Quick explanation:</strong> "PLMN" refers to the <a href="https://en.wikipedia.org/wiki/Public_land_mobile_network">Public Land Mobile Network</a>, in which every network has to have a unique carrier ID defined by the 3-digit "mobile country code (MCC)" and a 2 or 3-digit "mobile network code (MNC)". Alternately, for iPhone compatibility in the US, SCN uses the CBRS "private LTE" PLMN assigned by Apple as described in <a href="https://support.apple.com/guide/deployment/support-for-private-5g-and-lte-networks-depac6747317/web">this doc</a>.</p>
 <ul>
+<li>Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under <code>mme:</code> -&gt; <code>tai:</code> -&gt; <code>tac:</code> will need to match the TAC number configured on the eNB (using the default of 1 is fine). </li>
 <li>Optional: Edit <code>network_name:</code> (full and short) and <code>mme_name:</code> as desired. One of these names will show up on smartphones' lock screens as the "carrier" when the phone is attached to the network.</li>
 </ul>
 <h3 id="sgwu">SGWU</h3>
