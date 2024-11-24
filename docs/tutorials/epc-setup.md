@@ -55,11 +55,11 @@ Note that for our LTE setup, the MME and SGWU are the only components whose conf
 ### MME
 Edit the `/etc/open5gs/mme.yaml` file (as root or using `sudo`) as follows:
 - Under `mme:` -> `s1ap:` -> `server:` -> `address:`, set the IP address you will assign to the network interface (likely an ethernet port) on your EPC computer which will be connecting to the eNB. In this tutorial (to match with the Network Configuration section that follows), we will use `192.168.150.1`.
-- Under both `mme:` -> `gummei:` and `mme:` -> `tai:`, you will need to change the `plmn_id` (`mcc` and `mnc` values) to match the PLMN you are using for your network.
-- Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under `tai:` -> `tac:` will need to match the TAC number configured on the eNB (using the default of 1 is fine). 
+- Under both `mme:` -> `gummei:` and `mme:` -> `tai:`, you will need to change the `plmn_id:` (`mcc:` and `mnc:` values) to match the PLMN you are using for your network. In SCN we use `315` for the MCC and `010` for the MNC, as explained in the "Quick explanation" below.
 
 **Quick explanation:** "PLMN" refers to the [Public Land Mobile Network](https://en.wikipedia.org/wiki/Public_land_mobile_network), in which every network has to have a unique carrier ID defined by the 3-digit "mobile country code (MCC)" and a 2 or 3-digit "mobile network code (MNC)". Alternately, for iPhone compatibility in the US, SCN uses the CBRS "private LTE" PLMN assigned by Apple as described in [this doc](https://support.apple.com/guide/deployment/support-for-private-5g-and-lte-networks-depac6747317/web).
 
+- Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under `mme:` -> `tai:` -> `tac:` will need to match the TAC number configured on the eNB (using the default of 1 is fine). 
 - Optional: Edit `network_name:` (full and short) and `mme_name:` as desired. One of these names will show up on smartphones' lock screens as the "carrier" when the phone is attached to the network.
 
 ### SGWU
