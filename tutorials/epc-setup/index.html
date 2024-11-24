@@ -348,12 +348,13 @@ Clone the repository into the EPC machine:</p>
 <p>The script can be found in <code>misc/db/open5gs-dbctl</code> from the top level of the repository (<code>open5gs</code> folder). For example, you could run a command to add a user like this from within the <code>open5gs/misc/db</code> folder:</p>
 <pre><code class="language-bash">sudo ./open5gs-dbctl add 460660003400030 192.168.20.30 0x00112233445566778899AABBCCDDEEFF 0x000102030405060708090A0B0C0D0E0F
 </code></pre>
-<p>Running the <code>./open5gs-dbctl</code> command on its own will output a list of allowed command syntax, of which the following can be particularly handy:
-- <code>add {imsi key opc}: adds a user to the database with default values</code>
-- <code>add {imsi ip key opc}: adds a user to the database with default values and a IPv4 address for the UE</code>
-- <code>remove {imsi}: removes a user from the database</code>
-- <code>static_ip {imsi ip4}: adds a static IP assignment to an already-existing user</code>
-- <code>add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific apn</code></p>
+<p>Running the <code>./open5gs-dbctl</code> command on its own will output a list of allowed command syntax, of which the following can be particularly handy:</p>
+<pre><code class="language-bash">add {imsi key opc}: adds a user to the database with default values
+add {imsi ip key opc}: adds a user to the database with default values and a IPv4 address for the UE
+remove {imsi}: removes a user from the database
+static_ip {imsi ip4}: adds a static IP assignment to an already-existing user
+add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific apn
+</code></pre>
 <p>The help text also tells you that "default values are as follows: APN "internet", dl_bw/ul_bw 1 Gbps, PGW address is 127.0.0.3, IPv4 only".</p>
 <h1 id="step-5-maintenance-and-management">Step 5: Maintenance and Management</h1>
 <h2 id="updating-open5gs">Updating Open5GS</h2>
