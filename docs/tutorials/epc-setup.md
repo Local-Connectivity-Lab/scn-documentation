@@ -39,7 +39,7 @@ The following steps will walk you through this installation process.
 
 # Step 1: Open5GS Install Notes
 
-We install Open5GS following the [Open5GS Quickstart documentation](https://open5gs.org/open5gs/docs/guide/01-quickstart/) based on your operating system and desired implementation (e.g. "bare metal" directly on the operating system vs. [Docker](https://github.com/wildeyedskies/docker-open5gs-basic-config)).
+Install Open5GS following the [Open5GS Quickstart documentation](https://open5gs.org/open5gs/docs/guide/01-quickstart/) based on your operating system and desired implementation (e.g. "bare metal" directly on the operating system vs. [Docker](https://github.com/wildeyedskies/docker-open5gs-basic-config)).
 There are even [VoLTE](https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/) and [Dockerized VoLTE](https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/) implementations of Open5GS.
 A similar step-by-step tutorial to this one can be found [here](https://medium.com/networkers-fiit-stu/setting-up-open5gs-a-step-by-step-guide-or-how-we-set-up-our-lab-environment-5da1c8db0439).
 
