@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Deploying - Seattle Community Network Docs</title>
+    <title>Librenms - Seattle Community Network Docs</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Deploying";
-        var mkdocs_page_input_path = "tutorials/librenms/deploy.md";
+        var mkdocs_page_name = "Librenms";
+        var mkdocs_page_input_path = "tutorials/librenms/librenms.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -110,17 +110,13 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Librenms</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Deploying</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Librenms</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#software-requirements">Software requirements</a>
+    <li class="toctree-l3"><a class="reference internal" href="#backup">Backup</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a>
+    <li class="toctree-l3"><a class="reference internal" href="#updating">Updating</a>
     </li>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../upgrade/">Upgrading</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../backup/">Backing Up</a>
                 </li>
     </ul>
                   </li>
@@ -146,7 +142,7 @@
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Tutorials</li>
           <li class="breadcrumb-item">Librenms</li>
-      <li class="breadcrumb-item active">Deploying</li>
+      <li class="breadcrumb-item active">Librenms</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -155,35 +151,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="deploying">Deploying</h1>
-<p>I wrote a script to deploy libreNMS with the configuration that SCN uses. The repo is <a href="https://github.com/abacef/scn-librenms-deploy-script/tree/main">here</a></p>
-<h2 id="software-requirements">Software requirements</h2>
-<p>Only tested on debian and ubuntu. Not sure what else it works on but it could work on other linux distros</p>
-<h2 id="steps">Steps</h2>
-<ol>
-<li>Install docker if it is not installed already</li>
-<li>Install docker compose if it is not installed already</li>
-<li>Instal unzip if it is not installed already</li>
-<li>Check out this repo</li>
-<li>If you want to restore a previous install, provide a sqldump named <code>librenms.sql</code> flat in this checked out repo. There is a helper script called <code>get_database_from_currently_running_server.sh</code> to get the database off of the non dockerized install (needs ssh access to the server)</li>
-<li>If you want to restore the graphs too, you can provide a file named <code>rrd.zip</code> flat in the checked out repo which is just the rrd folder ziped up.  There is a helper script called <code>get_rrd_zip_from_currently_running_server.sh</code> to get the rrd zip from the non dockerized install (needs ssh access to the server)</li>
-<li>Run <code>./deploy.sh</code></li>
-<li>builds the librenms image</li>
-<li>builds the database image with/without the backup</li>
-<li>Starts the service using <code>docker compose</code>. This creates 2 shared volumes in the <code>compose</code> directory<ol>
-<li>The <code>librenms</code> folder is for the librenms docker images to share configuration data including rrd files</li>
-<li>The <code>db</code> volume is the database</li>
-</ol>
-</li>
-<li>unzips the rrd folder in the rrd directory of the shared <code>librenms</code> volume</li>
-</ol>
-<p>The UI will run on port 8000</p>
+                <h1 id="librenms">Librenms</h1>
+<p>We have a librenms instance running. If you want to deploy it locally to test it out or fix our infrastructure, here are the instructions: https://github.com/abacef/scn-librenms-deploy-script</p>
+<h2 id="backup">Backup</h2>
+<p>If you want to back up the current install of librenms, you can use this script https://github.com/abacef/scn-librenms-backup-script . You can also use this to get the currently running data from the instance to install a mirror instance either locally on your computer or on a server.</p>
+<h2 id="updating">Updating</h2>
+<p>If you want to update the current install of librenms, you can use this script https://github.com/abacef/scn-software-updater . There is an ansible script in there just for librenms.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../grafana-log-dashboard/" class="btn btn-neutral float-left" title="Grafana Log Dashboard Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../upgrade/" class="btn btn-neutral float-right" title="Upgrading">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../../contribute/contribute/" class="btn btn-neutral float-right" title="Contribute to SCN Docs">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -209,7 +188,7 @@
       <span><a href="../../grafana-log-dashboard/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../upgrade/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../../contribute/contribute/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
