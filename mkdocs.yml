@@ -4,3 +4,6 @@ theme: readthedocs
 plugins:
   - search
   - awesome-pages
+
+markdown_extensions:
+  - markdown.extensions.footnotes
