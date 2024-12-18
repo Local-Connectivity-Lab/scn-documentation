@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Step 1. LTE Core Network Setup - Seattle Community Network Docs</title>
+    <title>Step 1. LTE EPC (Evolved Packet Core) Network Setup - Seattle Community Network Docs</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Step 1. LTE Core Network Setup";
+        var mkdocs_page_name = "Step 1. LTE EPC (Evolved Packet Core) Network Setup";
         var mkdocs_page_input_path = "tutorials/epc-setup.md";
         var mkdocs_page_url = null;
       </script>
@@ -100,7 +100,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../librenms-setup/">Network Monitoring 2. LibreNMS Agent Configuration</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Step 1. LTE Core Network Setup</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Step 1. LTE EPC (Evolved Packet Core) Network Setup</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#lte-architecture">LTE Architecture</a>
     </li>
@@ -143,7 +143,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Tutorials</li>
-      <li class="breadcrumb-item active">Step 1. LTE Core Network Setup</li>
+      <li class="breadcrumb-item active">Step 1. LTE EPC (Evolved Packet Core) Network Setup</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -160,7 +160,7 @@
 <p>SCN currently runs the LTE-specific components of the <a href="https://open5gs.org/">Open5GS</a> 4G/5G Non-Standalone (NSA) core. </p>
 <p>You can find more detailed documentation and diagrams of the Open5GS software architecture at the Open5GS <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Quickstart</a> page. Their software supports both 4G and 5G, and you only need to run a subset of the software components for 4G.</p>
 <h2 id="operating-system-support">Operating System Support</h2>
-<p>In SCN we will typically perform these installation steps using a fresh install of Ubuntu 22.04 on an x86-64-based computer; however, any operating system that <code>open5gs</code> supports should work.</p>
+<p>In SCN we will typically perform these installation steps using a fresh install of Ubuntu 24.04 on an x86-64-based computer; however, any operating system that <code>open5gs</code> supports should work.</p>
 <p>Note: When you're installing Ubuntu, we suggest choosing the "minimal install" option that doesn’t install extra unnecessary software. In prior installs this has led to version conflicts.</p>
 <h2 id="software-components">Software Components</h2>
 <p>As of November 2024, in the <a href="https://github.com/open5gs/open5gs">Open5GS software package</a>, the LTE-specific components (which run on Ubuntu as <a href="http://manpages.ubuntu.com/manpages/bionic/man1/systemd.1.html">systemd</a> services) are as follows:</p>
@@ -174,43 +174,47 @@
 <li>PGWU/UPF - Packet Gateway User Plane / (component contained in Open5GS UPF): <code>open5gs-upfd.service</code></li>
 </ul>
 <p>We would also recommend running the optional WebUI (Web User Interface) service: <code>open5gs-webui.service</code>.</p>
-<p>The following steps will walk you through this installation process.</p>
-<h1 id="step-1-install-open5gs-notes-and-pointers">Step 1: Install Open5GS (Notes and Pointers)</h1>
-<p>Install Open5GS following the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart documentation</a> based on your operating system and desired implementation (e.g. "bare metal" directly on the operating system vs. <a href="https://github.com/wildeyedskies/docker-open5gs-basic-config">Docker</a>).
-There are even <a href="https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/">VoLTE</a> and <a href="https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/">Dockerized VoLTE</a> implementations of Open5GS.
-A similar step-by-step tutorial to this one can be found <a href="https://medium.com/networkers-fiit-stu/setting-up-open5gs-a-step-by-step-guide-or-how-we-set-up-our-lab-environment-5da1c8db0439">here</a>.</p>
-<p>In SCN we have run Open5GS successfully using Ubuntu 20.04 and 22.04, on bare metal or in Virtual Machines, installed via the <code>apt</code> package manager (see Step "2. Install Open5GS with a Package Manager" of the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Quickstart</a>).
+<p>The following steps will walk you through this installation process.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<h1 id="step-1-install-open5gs">Step 1: Install Open5GS</h1>
+<h2 id="follow-the-open5gs-quickstart-guide-to-install-open5gs">Follow the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart guide</a> to install Open5gs.</h2>
+<p>Complete at least Section 2 of the guide based on your operating system (OS) and desired implementation (e.g. "bare metal" directly on the OS vs. <a href="https://github.com/wildeyedskies/docker-open5gs-basic-config">Docker</a>).<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>In SCN we have run Open5GS successfully using Ubuntu 20.04, 22.04, and 24.04 (on bare metal or in Virtual Machines) and installed via the <code>apt</code> package manager (see Step "2. Install Open5GS with a Package Manager" of the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Quickstart</a>).
 First install MongoDB as described in the Quickstart. Then follow instructions under the "Ubuntu" section to install Open5GS via apt.</p>
-<p>Note: If installing over a <code>ssh</code> connection, we recommend using <code>tmux</code> or another program in case you get disconnected from the session in the process. </p>
-<h2 id="configure-mme-and-sgwu">Configure MME and SGWU</h2>
-<p>Note that for our LTE setup, the MME and SGWU are the only components whose config files you will really need to change from the defaults.</p>
-<h3 id="mme">MME</h3>
+<p>We also recommend Section 3, though it is not required.
+This will later allow you to register subscribers via the GUI steps provided in the "Register Subscriber Information" section of the Quickstart.</p>
+<p>After these two sections of the Quickstart, you can mostly return to our tutorial here.
+However, later on in the Networking section we will also be completing the Quickstart steps to "enable forwarding and add the NAT rule" section called "Adding a route for the UE to have WAN connectivity," so you can complete them now if you wish.</p>
+<p><em>Note: If installing Open5GS over a</em> <code>ssh</code> <em>connection, we recommend using</em> <code>tmux</code> <em>or another program in case you get disconnected from the session in the process.</em></p>
+<h1 id="step-2-configure-open5gs-components-mme-and-sgwu">Step 2: Configure Open5gs Components (MME and SGWU)</h1>
+<p>For our LTE setup, the MME and SGWU are the only components whose config files you will need to change from the defaults.</p>
+<h2 id="mme">MME</h2>
 <p>Edit the <code>/etc/open5gs/mme.yaml</code> file (as root or using <code>sudo</code>) as follows:
-- Under <code>mme:</code> -&gt; <code>s1ap:</code> -&gt; <code>server:</code> -&gt; <code>address:</code>, set the IP address you will assign to the network interface (likely an ethernet port) on your EPC computer which will be connecting to the eNB. In this tutorial (to match with the Network Configuration section that follows), we will use <code>192.168.150.1</code>.
+- Under <code>mme:</code> -&gt; <code>s1ap:</code> -&gt; <code>server:</code> -&gt; <code>address:</code>, set the IP address you will assign to the network interface (likely an ethernet port) on your EPC computer which will be connecting to the eNB. In this tutorial (to match with the Network Configuration section that follows), we will use <code>192.168.150.2</code>.
 - Under both <code>mme:</code> -&gt; <code>gummei:</code> and <code>mme:</code> -&gt; <code>tai:</code>, you will need to change the <code>plmn_id:</code> (<code>mcc:</code> and <code>mnc:</code> values) to match the PLMN you are using for your network. In SCN we use <code>315</code> for the MCC and <code>010</code> for the MNC, as explained in the "Quick explanation" below.</p>
 <p><strong>Quick explanation:</strong> "PLMN" refers to the <a href="https://en.wikipedia.org/wiki/Public_land_mobile_network">Public Land Mobile Network</a>, in which every network has to have a unique carrier ID defined by the 3-digit "mobile country code (MCC)" and a 2 or 3-digit "mobile network code (MNC)". Alternately, for iPhone compatibility in the US, SCN uses the CBRS "private LTE" PLMN assigned by Apple as described in <a href="https://support.apple.com/guide/deployment/support-for-private-5g-and-lte-networks-depac6747317/web">this doc</a>.</p>
 <ul>
 <li>Note that for the purposes of eNB config later, the Tracking Area Code (or TAC) listed under <code>mme:</code> -&gt; <code>tai:</code> -&gt; <code>tac:</code> will need to match the TAC number configured on the eNB (using the default of 1 is fine). </li>
 <li>Optional: Edit <code>network_name:</code> (full and short) and <code>mme_name:</code> as desired. One of these names will show up on smartphones' lock screens as the "carrier" when the phone is attached to the network.</li>
 </ul>
-<h3 id="sgwu">SGWU</h3>
+<h2 id="sgwu">SGWU</h2>
 <p>Edit the <code>/etc/open5gs/sgwu.yaml</code> file (as root or using <code>sudo</code>) as follows:
-- Under <code>sgwu:</code> -&gt; <code>gtpu:</code> -&gt; <code>server:</code> -&gt; <code>address:</code>, set the IP address you will assign to the network interface on your EPC computer which will be connecting to the eNB (this should be the same as the IP address of the MME set above, if the MME and SGWU are running on the same machine). In this tutorial we will use <code>192.168.150.1</code>.</p>
+- Under <code>sgwu:</code> -&gt; <code>gtpu:</code> -&gt; <code>server:</code> -&gt; <code>address:</code>, set the IP address you will assign to the network interface on your EPC computer which will be connecting to the eNB (this should be the same as the IP address of the MME set above, if the MME and SGWU are running on the same machine). In this tutorial we will use <code>192.168.150.2</code>.</p>
 <p>As mentioned in the Quickstart, after changing the config files, you will need to restart the corresponding Open5GS daemons:</p>
 <pre><code class="language-bash">sudo systemctl restart open5gs-mmed
 sudo systemctl restart open5gs-sgwud
 </code></pre>
-<p>However, the MME will likely not start correctly until networking is configured, as described below.</p>
-<h1 id="step-2-configure-networking">Step 2: Configure Networking</h1>
-<p>Remember to follow all the network configuration steps in the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Open5GS Quickstart documentation</a>. For SCN's Ubuntu machines, this means:</p>
+<p>However, the MME will not start correctly until networking is configured, as described below.</p>
+<h1 id="step-3-configure-networking">Step 3: Configure Networking</h1>
+<p>Setting up networking can be the most finicky part of Open5GS configuration, and the source of most failures/bugs.</p>
+<p>For SCN's Ubuntu machines, this means:</p>
 <ul>
-<li>Allowing IP forwarding on your machine, e.g. via the following command:</li>
-</ul>
-<pre><code class="language-bash">sudo sysctl -w net.ipv4.ip_forward=1
-</code></pre>
-<ul>
+<li>Allowing IP forwarding on your machine, e.g. via the following options:</li>
+<li>For immediate application, run the command 
+    <code>bash
+    sudo sysctl -w net.ipv4.ip_forward=1</code></li>
+<li>For persistence, in <code>/etc/sysctl.conf</code> remove the <code>#</code> comment symbol from the front of the line that says <code>net.ipv4.ip_forward=1</code></li>
 <li>Using Netplan to configure network interfaces with IP addresses in the desired way.</li>
-<li>Setting up NAT rules using <code>iptables</code> so that traffic from the eNB can reach the Internet and vice versa</li>
+<li>Setting up NAT rules using <code>iptables</code> so that traffic from the eNB can reach the Internet and vice versa. </li>
 </ul>
 <p>The latter two steps are explained in detail below. </p>
 <h2 id="netplan-configuration">Netplan Configuration</h2>
@@ -223,7 +227,7 @@ out the names of your computer's ethernet interfaces. Use the command <code>ip a
 line. A list of network interfaces will appear in the terminal. Find the ones
 corresponding to your ethernet ports (their names usually start with “eth,”
 “enp,” or “enx”).</p>
-<p>For Ubuntu 22.04, we're currently using the Netplan program to manage our network configuration.
+<p>For Ubuntu 24.04, we're currently using the Netplan program to manage our network configuration.
 Create a file in the <code>/etc/netplan</code> directory (i.e. a folder) named
 <code>99-open5gs-config.yaml</code>, and add the following lines, substituting the correct
 interface names and subnets for your configuration:</p>
@@ -269,7 +273,7 @@ route local traffic between the EPC and eNB.</p>
 network:
   ethernets:
     enp1s0: # name of ethernet interface
-      dhcp4: true
+      dhcp4: yes
       addresses:
         - 192.168.150.2/24 # list all downstream networks
         - 192.168.151.2/24
@@ -285,14 +289,16 @@ recommended configuration above, you may need to connect that EPC ethernet port
 to something (e.g. the eNB, a switch, another machine) via an ethernet cable to
 wake the interface up (so that it becomes active and takes on the assigned IP
 addresses). This is because the open5gs MME needs to "bind" (or associate) its S1 interface to one of those IP
-addresses (in this case <code>192.168.0.2</code>). Until those IP addresses exist on your machine,
+addresses (in this case <code>192.168.150.2</code>). Until those IP addresses exist on your machine,
 the MME will continually throw errors if you try to run it.</p>
 <h2 id="setting-iptables-nat-rules-to-connect-the-enb-to-the-internet">Setting <code>iptables</code> NAT rules to connect the eNB to the Internet</h2>
 <p>As explained above, the eNB currently has the IP addresses <code>192.168.150.1</code> and <code>192.168.151.1</code>-- <em><a href="https://en.wikipedia.org/wiki/Private_network">private IP addresses</a></em> that cannot be used on the public Internet. Therefore, to successfully route the eNB's network traffic to the Internet, we have to add a routing rule in the EPC computer that performs NAT, allowing packets from the eNB's subnet to exit the WAN port of the EPC <em>masquerading as</em> coming from the EPC's IP address to the upstream network.</p>
 <p>There might be an easier way to do this, but we've found the cleanest and most reliable way so far to be using the <code>iptables</code> command line tool. In the Terminal on the EPC, run the following command to add a NAT rule for the eNB's subnet:</p>
 <pre><code class="language-bash">sudo iptables -t nat -A POSTROUTING -s 192.168.151.0/24 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE
 </code></pre>
-<p><strong>Quick explanation:</strong> The <code>-t nat</code> option tells IPTables to install the rule in the correct "table" containing all the NAT rules, and the <code>-A</code> option means we're <strong>A</strong>dding the rule as opposed to <strong>D</strong>eleting it (<code>-D</code>). <code>POSTROUTING</code> is the "chain," or particular list of rules, that this type of NAT rule should go in (more on that <a href="https://rlworkman.net/howtos/iptables/chunkyhtml/c962.html">here</a> and in this <a href="https://upload.wikimedia.org/wikipedia/commons/3/37/Netfilter-packet-flow.svg">diagram</a> if you're interested). <code>-s 192.168.151.0/24</code> means that we're applying this rule to packets from the <strong>S</strong>ource IP addresses described by the subnet <code>192.168.151.0/24</code>. <code>-j MASQUERADE</code> means the action we'll be <strong>J</strong>umping to as a result of this rule is "masquerading" the source IP address as my EPC's WAN IP address.</p>
+<p><strong>Quick explanation:</strong> The <code>-t nat</code> option tells IPTables to install the rule in the correct "table" containing all the NAT rules, and the <code>-A</code> option means we're <strong>A</strong>dding the rule as opposed to <strong>D</strong>eleting it (<code>-D</code>). <code>POSTROUTING</code> is the "chain," or particular list of rules, that this type of NAT rule should go in (more on that <a href="https://rlworkman.net/howtos/iptables/chunkyhtml/c962.html">here</a> and in this <a href="https://upload.wikimedia.org/wikipedia/commons/3/37/Netfilter-packet-flow.svg">diagram</a> if you're interested). <code>-s 192.168.151.0/24</code> means that we're applying this rule to packets from the <strong>S</strong>ource IP addresses described by the subnet <code>192.168.151.0/24</code>. <code>-j MASQUERADE</code> means the action we'll be <strong>J</strong>umping to as a result of this rule is "masquerading" the source IP address as my EPC's WAN IP address.
+The second rule allows traffic from the LTE clients on the open5gs subnet to get routed out to the Internet as well.</p>
 <h3 id="persist-iptables-configuration">'Persist' IPTables Configuration</h3>
 <p>We use IPTables rules to make sure packets are routed correctly within the EPC. IPTables rules must be made persistent across reboots with the <code>iptables-persistent</code> package:</p>
 <pre><code class="language-bash">sudo apt install iptables-persistent
@@ -306,14 +312,14 @@ normal circumstances:</p>
 <pre><code class="language-bash">sudo iptables-save &gt; /etc/iptables/rules.v4
 sudo iptables-restore &lt; /etc/iptables/rules.v4
 </code></pre>
-<h1 id="step-3-start-and-monitor-open5gs-software-services">Step 3: Start and monitor Open5GS software services</h1>
+<h1 id="step-4-start-and-monitor-open5gs-software-services">Step 4: Start and monitor Open5GS software services</h1>
 <p>Ubuntu’s built-in logging and monitoring services can be used to monitor the core network services. For example, for seeing the output logs of the MME software component we described in the first section, run the following command in the Terminal:</p>
 <pre><code class="language-bash">sudo journalctl -f -u open5gs-mmed.service
 </code></pre>
 <p>OR</p>
 <pre><code class="language-bash">sudo systemctl status open5gs-mmed.service
 </code></pre>
-<p><em>Tab complete may be able to fill in the service name for systemctl at least.</em></p>
+<p><em>Tab complete may be able to fill in the service name for</em> <code>systemctl</code> <em>though often not for</em> <code>journalctl</code>.</p>
 <p>Learning to read output logs is really important for managing software infrastructure! Simply Googling output messages that seem important but that you don't understand can be a good first step to figuring out how a system is working. Another interesting tool to investigate is <a href="https://www.wireshark.org/">Wireshark</a>, which is essentially a graphical user interface (GUI) version of the <a href="https://www.tcpdump.org/">tcpdump</a> command line tool that can show you the communications <a href="https://en.wikipedia.org/wiki/Network_packet">packets</a> flowing through the various network cards on your computer.</p>
 <p>Here are some more useful commands for managing systemd services, which can be used to start, stop, and reload the software components after you've changed their configuration or they've run into errors and need to be restarted:</p>
 <pre><code class="language-bash">sudo systemctl start open5gs-mmed.service
@@ -324,16 +330,18 @@ sudo systemctl status open5gs-*
 <p>The following command will start only the systemd services required for LTE. However, you do not need to stop or disable the other components of the 5G core for it to run 4G LTE network hardware correctly- the full Open5GS 5G core is backwards compatible with LTE hardware if you configure the LTE components correctly.</p>
 <pre><code class="language-bash">sudo systemctl start open5gs-hssd.service open5gs-mmed.service open5gs-sgwud.service open5gs-sgwcd.service open5gs-pcrfd.service open5gs-upfd.service open5gs-smfd.service
 </code></pre>
-<h3 id="install-and-start-the-webui">Install and Start the WebUI</h3>
-<p>The WebUI is another systemd service and runs by default on your local computer at port 9999. 
-It requires some more dependencies to install, such as <code>nodejs</code> (see Step "3. Install the WebUI of Open5GS" in the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Quickstart</a>). You can reach it by navigating to <code>http://localhost:9999</code> in your web browser.</p>
-<p>If not already started, start it with the following command:</p>
+<h3 id="start-the-webui">Start the WebUI</h3>
+<p>The WebUI is another (optional) systemd service you may have chosen to install while following the Open5gs Quickstart.
+It is a web portal that runs by default on port 9999 on the EPC computer. 
+You can reach it by navigating to <code>http://localhost:9999</code> in your web browser.
+It requires some more dependencies to install, such as <code>nodejs</code> (see Step "3. Install the WebUI of Open5GS" in the <a href="https://open5gs.org/open5gs/docs/guide/01-quickstart/">Quickstart</a>).</p>
+<p>If the service has not already started, start it with the following command:</p>
 <pre><code class="language-bash">sudo systemctl start open5gs-webui.service
 </code></pre>
 <p>The default WebUI login credentials are as follows:
 - Username : admin
 - Password : 1423</p>
-<h1 id="step-4-add-users-to-open5gs-database">Step 4: Add Users to Open5GS database</h1>
+<h1 id="step-5-add-users-to-open5gs-database">Step 5: Add Users to Open5GS database</h1>
 <p>(Note that an important pre-condition to adding users is to have SIM cards or eSIMs to give to the users for authentication, along with their respective IMSIs and secret keys to register them onto the EPC. These must be procured separately. 
 WIP- We will endeavor to make guides for these processes available soon.)</p>
 <p>You can manage users using the Open5GS WebUI, or using a script provided in the <a href="https://github.com/open5gs/open5gs">Open5GS GitHub repository</a>.
@@ -352,7 +360,7 @@ static_ip {imsi ip4}: adds a static IP assignment to an already-existing user
 add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific apn
 </code></pre>
 <p>The help text also tells you that "default values are as follows: APN "internet", dl_bw/ul_bw 1 Gbps, PGW address is 127.0.0.3, IPv4 only".</p>
-<h1 id="step-5-maintenance-and-management">Step 5: Maintenance and Management</h1>
+<h1 id="step-6-maintenance-and-management">Step 6: Maintenance and Management</h1>
 <h2 id="updating-open5gs">Updating Open5GS</h2>
 <p>WIP: We are working on an Ansible-based management script for updates and will post updates as they occur.</p>
 <h2 id="backup-and-restore">Backup and Restore</h2>
@@ -362,6 +370,17 @@ add_ue_with_apn {imsi key opc apn}: adds a user to the database with a specific 
 <p>For information on how to install and configure CoLTE, visit the <a href="https://docs.colte.network/tutorials/epc-setup.html">tutorial</a> we wrote with them, on which this document is based.</p>
 <h1 id="comments-and-feedback">Comments and Feedback</h1>
 <p>Please get in touch with us at <a href="mailto:support@seattlecommunitynetwork.org">support@seattlecommunitynetwork.org</a> if you have questions or feedback about this tutorial! We want your feedback so we can make this better.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>A similar step-by-step tutorial to this one can be found <a href="https://medium.com/networkers-fiit-stu/setting-up-open5gs-a-step-by-step-guide-or-how-we-set-up-our-lab-environment-5da1c8db0439">here</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>There are even <a href="https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/">VoLTE</a> and <a href="https://open5gs.org/open5gs/docs/tutorial/03-VoLTE-dockerized/">Dockerized VoLTE</a> implementations of Open5GS.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div><footer>
