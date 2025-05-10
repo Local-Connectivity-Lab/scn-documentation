@@ -9,3 +9,4 @@ nav:
   - proxmox-vaultwarden-deployment.md
   - grafana-log-dashboard.md
   - librenms
+  - librenms_kiosk.md
