@@ -8,10 +8,6 @@ Here is a list of the software that we use to deploy, maintain, and plan our net
 
 ## Networking
 
-### Local Services
-We use the [CoLTE project](https://github.com/uw-ictd/colte) maintained by the University of Washington [ICTD Lab](https://ictd.cs.washington.edu/)
-to provide services such as network monitoring, web-based administration, and local web and DNS serving/caching.
-
 ### Evolved Packet Core (EPC)
 Our EPC is powered by [Open5GS](https://github.com/open5gs/open5gs), an open-source project for 4G and 5G core networks. Currently all of our networks are 4G networks.
 
@@ -42,7 +38,6 @@ We primarily use the Google Earth Pro [desktop application](https://www.google.c
 ### Ubiquiti Line of Sight
 A [web-based line of sight tool](https://link.ui.com/) provided by Ubiquiti that contains helpful altitude data and diagrams.
 A drawback is that it is specialized to provide data for Ubiquiti devices only.
-
 
 ## Other resources
 ### Facebook ISP Toolbox Line of Sight
