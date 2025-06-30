@@ -19,27 +19,17 @@ The FASTEST way to get support will be to join the `#support` channel on our [Di
 4. If you would like to get to know the community, introduce yourself in the `#introductions` channel! How did you hear about SCN and why are you interested?
 (More complete instructions can be found [here](https://docs.seattlecommunitynetwork.org/join)).
 
-## Community-Run Help Desk 
+## Community Help Lines
 
-The Seattle Community Network organizes a community-run tech help desk supported by the Black Brilliance Research Project's (BBR's) Digital Stewards Program and the Filipino Community of Seattle (FCS). Our current in-person help desk hours are on *Fridays at 3-5 pm* starting on 2/18/2022, located in the *Filipino Community Village Integrated Learning Center (ILC)*.
+Our help desk is best-effort and all volunteer-based, so our availability may be highly variable!
 
-Filipino Community Village Integrated Learning Center address:
-5727 37th Ave S, Seattle, WA 98118
-
-Our help desk is best-effort and mainly volunteer-based, so our virtual hours availability may be highly variable. 
-Please check our available hours and sign up for an appointment slot using the calendar link below if you can (or contact us another way if that doesn't work), as it helps the volunteers plan for our time.
-However, you may also drop in during our scheduled calendar hours without an appointment.
-
-* [Our Help Desk Calendar](https://calendar.google.com/calendar/u/0/embed?src=c_grfefg3uklclsha3h8mhci8sdc@group.calendar.google.com&ctz=America/Los_Angeles): You can sign up for an appointment slot for any staffed volunteer hours indicated on the calendar. 
 * Phone Number (Voicemail-only except during staffed Community Tech Help hours): `(253) 655-7221`
     * You may also send text messages to this number, which will be checked during staffed hours.
-    * Inquiries about getting connected to our Internet service can also be sent here. 
-* Email address for general Tech Support: [support@seattlecommunitynetwork.org](mailto:support@seattlecommunitynetwork.org)
-* Email address for SCN Internet service-related support: [help@seattlecommunitynetwork.org](mailto:help@seattlecommunitynetwork.org)
+* Email address (preferred): [support@seattlecommunitynetwork.org](mailto:support@seattlecommunitynetwork.org)
 
 ### Help Desk Volunteers
 
-We are actively recruiting more volunteers to help us run the help desk virtually, whenever and wherever that you are available. 
+We are always recruiting more volunteers willing to offer tech support.
 Join our team by simply signing up on this [interest form](https://forms.gle/iqBYKmjkTYa4gFK98), we need you! 
 
 Please let us know if you have additional questions or concerns in the `#support` channel on our [Discord](https://discord.gg/mneaSskFT3). 
@@ -47,4 +37,3 @@ Please let us know if you have additional questions or concerns in the `#support
 ## Documentation
 
 As always, please do not hesitate to consult our [docs](https://docs.seattlecommunitynetwork.org) for any information, or submit an issue on the docs site [github](https://github.com/Local-Connectivity-Lab/scn-documentation) if there is information missing that you would like to see.
-Also feel free to message the Discord for the same purpose.
