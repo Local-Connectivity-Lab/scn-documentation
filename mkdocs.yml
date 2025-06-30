@@ -7,3 +7,4 @@ plugins:
 
 markdown_extensions:
   - markdown.extensions.footnotes
+  - attr_list
