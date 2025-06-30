@@ -12,4 +12,4 @@ SCN Lab Space Membership is for 24/7 keyholder access to the space only, and is 
 
 Here are the current member [application](https://www.cognitoforms.com/TheSilentTaskForce1/SCNSpaceMembershipApplicationFormAndAgreement) and [policies](https://docs.google.com/document/d/1jHKDoY01IUAhroEsmL_nff-2he1DZx-30uwkQw4jY6A/edit).
 
-<img src="../assets/images/scn-space.jpg" alt="New members moving into our first room in the SCN space, July 2024" width="600"/>
+![](../assets/images/scn-space.jpg "New members moving into our first room in the SCN space, July 2024")
