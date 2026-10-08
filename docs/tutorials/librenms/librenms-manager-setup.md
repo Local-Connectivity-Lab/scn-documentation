@@ -1,5 +1,5 @@
 ---
-title: Network Monitoring 1. LibreNMS Network Manager Configuration
+title: LibreNMS Network Manager Configuration
 ---
 
 # LibreNMS Network Manager Configuration
