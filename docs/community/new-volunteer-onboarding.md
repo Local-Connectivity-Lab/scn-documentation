@@ -11,14 +11,14 @@ title: New Volunteer Checklist
 * Discord access: [Invite Link](https://discord.com/invite/gn4DKF83bP)  
 * Projects calendar: [Google Calendar](https://calendar.google.com/calendar/u/0/embed?src=c_a1hc9up10c9k6a3g6f2om37g6o@group.calendar.google.com&ctz=America/Los_Angeles&pli=1)  
 * Current best documentation: [MkDocs](https://docs.seattlecommunitynetwork.org/) | [GitHub](https://github.com/Local-Connectivity-Lab/scn-documentation) | WikiJS (in the works)  
-* Volunteer Liability Waiver form: [CognitoForms](https://www.cognitoforms.com/TheSilentTaskForce1/SCNVolunteerReleaseAndWaiverOfLiabilityForm) | [Google Drive](https://drive.google.com/file/d/1g6VRdacJ_6ngWteV8VTyhJVMs4_aGcoa/view?usp=drive_link)
+* Volunteer Liability Waiver form: [Online Form](https://forms.seattlecommunitynetwork.org/forms/waiver) | [PDF Form](https://drive.google.com/file/d/1g6VRdacJ_6ngWteV8VTyhJVMs4_aGcoa/view?usp=drive_link)
 
 ## Network and Org Administration
 
 * Setup  
   * Google Drive access and permissions as needed  
   * GitHub access and permissions as needed  
-  * Wireguard for VPN access: [Instructions](https://docs.google.com/document/d/1XYseq-wD6JHVQCVcFpiqd1OHlGJoyG0kH1GmyoofmKE/edit?usp=drive_link)  
+  * Wireguard for VPN access: [Instructions](https://wiki.seattlecommunitynetwork.org/en/Public/New-Volunteers/SCN-Wireguard-Tutorial)
   * Create an LDAP user object for the volunteer: [FreeIPA](https://ldap.cloud.seattlecommunitynetwork.org)  
 * Management Environments  
   * Redmine for tickets and work orders: [Redmine](http://redmine.infra.seattlecommunitynetwork.org)  
