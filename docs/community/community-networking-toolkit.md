@@ -54,7 +54,7 @@ Ethernet crimping is an important skill for network site installations. The leng
         * Do these resources have corresponding assessments to help assess individuals’ digital skill abilities?
 * [Worksheet for Digital Skills for Diverse Users](https://www.seattle.gov/Documents/Departments/Tech/DigitalEquity/digital%20skills%20list-worksheet_DEN.docx)
     * A list of 74 skills identified by TASCHA (see above resource) to include in digital equity curriculums
-* [Report on current state of Detroit Community Network](https://drive.google.com/file/d/1kiByZFQ2KKTOWzB91D0yH0_UcDkRYg-a/view)
+* [Dissertation on Detroit Community Network](https://digital.lib.washington.edu/server/api/core/bitstreams/53a9edbd-75fb-4f01-a367-9a2c387766c3/content)
     * In this case study, we focus on Detroit and the predominantly Black and lower-income neighborhood of the North End as an example of innovative, community-scale projects that are locally generated.
 * [New Community Networks by Douglas Schuler](https://publicsphereproject.org/ncn/)
     * Online book about building and socially sustaining community networks, based on Doug Schuler's experiences with the Seattle Community Network project in the 90's (1996)
